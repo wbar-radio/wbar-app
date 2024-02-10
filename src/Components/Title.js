@@ -1,32 +1,24 @@
-import React from 'react'
-import "../title.css"
+// Title.js
+
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './title.css';
 
-
-function Title() {
+const Title = () => {
   return (
     <div className="Title">
-      <h1>WBAR</h1>
 
-      <div style={{ display: "flex" }}>
-        {/* Use Link to navigate to the Home route */}
-        <Link to="/">
-          <button style={{ marginRight: "auto" }}>
-            Home
-          </button>
-        </Link>
+      <div className="navbar">
+      <h1><Link to="/" className="nav-link">WBAR</Link>
+    </h1>
+    <Link to="/About" className="nav-link">About</Link>
 
-        {/* Use Link to navigate to the "/test" route */}
-        <Link to="/test">
-          <button style={{ marginLeft: "auto" }}>
-            DJ Schedule
-          </button>
-        </Link>
+        <Link to="/Events" className="nav-link">Events</Link>
+        <Link to="/DjSched" className="nav-link">Dj Schedule</Link>
+
       </div>
     </div>
-    
-  )
-
+  );
 }
 
-export default Title
+export default Title;

@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import DJSched from './DjSched';
 
-
+import "./Home.css"
 const image = require("./logo.png")
 
 

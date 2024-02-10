@@ -10,8 +10,12 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import DJSched from './Components/DjSched';
 import Home from './Components/Home';
+import Footer from './Components/Footer';
+import About from './Components/About';
+import Events from './Components/Events';
+import DjSched from './Components/DjSched';
+
 
 
 
@@ -21,21 +25,25 @@ import Home from './Components/Home';
 function App() {
   return (
     <div className="App">
-      {/* <Title />
-      <StickyStream/>
-      <img src={(image)} className="App-logo" alt="logo" />
-
-      <Chat></Chat> */}
+ 
 <Router>
 <Title></Title>
 <StickyStream/>
 
         <Routes>
-          <Route path="/test" element={<DJSched />} exact />
+          <Route path="/About" element={<About />} exact />
+          <Route path="/Events" element={<Events />} exact />
+          <Route path="/DjSched" element={<DjSched/>} exact />
+
           <Route path="/" element={<Home />} exact />
         </Routes>
       </Router>
+      <div>
+      {/* <Footer></Footer> */}
+
+      </div>
     </div>
+    
     
   );
 }

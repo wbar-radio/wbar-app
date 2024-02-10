@@ -28,6 +28,7 @@
   color: #61dafb;
 }
 
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,15 +37,7 @@
     transform: rotate(360deg);
   }
 }
-.Title {
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  padding: 1em;
-  margin-bottom: 2em;
-  background-color: #8A7DDA;
-  color: #fff;
-}
+
 .StickyStream{
   width: 100%;
 }

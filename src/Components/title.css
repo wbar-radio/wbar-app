@@ -1,0 +1,37 @@
+/* title.css */
+
+.Title {
+      /* Add your existing styles for the Title component */
+    }
+    /* .Title {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      padding: 1em;
+      margin-bottom: 2em;
+      background-color: #8A7DDA;
+      color: #fff;
+    } */
+    
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #8A7DDA;
+      color: #fff;
+      height: 60px; /* Set the height of the navigation bar */
+    }
+    
+    
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      transition: background-color 0.3s ease;
+    
+      &:hover {
+        background-color: #555; /* Change the background color on hover */
+      }
+    }
+    
