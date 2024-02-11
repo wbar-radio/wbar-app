@@ -14,7 +14,7 @@ const Title = () => {
     <Link to="/About" className="nav-link">About</Link>
 
         <Link to="/Events" className="nav-link">Events</Link>
-        <Link to="/DjSched" className="nav-link">Dj Schedule</Link>
+        <Link to="/DjSched" className="nav-link">DJ Schedule</Link>
 
       </div>
     </div>

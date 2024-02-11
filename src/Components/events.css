@@ -1,0 +1,44 @@
+/* events.css */
+
+.bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1C1353;
+    color: #fff;
+    height: 60px; /* Set the height of the navigation bar */
+}
+
+.bar-title {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.next-event {
+    width: '332px';
+    height: '298px';
+    pointer-events: none;
+}
+
+.spacer {
+    height: 20px; /* Adjust the height as needed */
+}
+
+.image-container-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent-container {
+    display: flex;
+}
+
+.image-container-past-1,
+.image-container-past-2,
+.image-container-past-3,
+.image-container-past-4 {
+    margin-left: 20px;
+}
