@@ -1,0 +1,11 @@
+/* djsched.css */
+
+.spacer {
+    height: 20px; /* Adjust the height as needed */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
