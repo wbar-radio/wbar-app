@@ -1,5 +1,5 @@
 import React from 'react'
-import './DJSched.css';
+import './DJSched.css'
 const image = require("./wbar-dj-sched.jpg")
 
 function DJSched(){
