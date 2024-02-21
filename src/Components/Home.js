@@ -12,6 +12,7 @@ import {
 import DJSched from './DjSched';
 
 import "./Home.css"
+import Shows from './shows';
 const image = require("./logo.png")
 
 
@@ -22,10 +23,10 @@ function Home() {
     <div className="Home">
       {/* <StickyStream/> */}
       <img src={(image)} className="App-logo" alt="logo" />
+      <Shows></Shows>
 
       <Chat></Chat>
 
-     
     </div>
     
   );
