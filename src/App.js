@@ -4,6 +4,10 @@ import './App.css';
 import Title from './Components/Title';
 import StickyStream from './Components/StickyStream';
 import Chat from './Components/Chat';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css.map';
+
+
 import {
   BrowserRouter as Router,
   Routes,

@@ -1,4 +1,4 @@
-/* djsched.css */
+djsched.css
 
 .spacer {
     height: 20px; /* Adjust the height as needed */
@@ -9,3 +9,52 @@
     justify-content: center;
     align-items: center;
 }
+/* DJSched.css */
+
+/* Style for the overall schedule container */
+
+  .DjSched {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+  }
+  .day {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .day:hover {
+    background-color: #e9ecef;
+  }
+  
+  .day.active {
+    background-color: #8A7DDA;
+    color: #fff;
+  }
+  
+  /* Day name */
+  .day-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Show container */
+  .show {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Show name */
+  .show-name {
+    font-weight: bold;
+  }
+  
+  /* Time */
+  .time {
+    color: #666;
+  }

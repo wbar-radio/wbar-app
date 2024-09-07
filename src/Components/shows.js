@@ -63,7 +63,7 @@ const schedule = {
       '2PM-4PM': 'Graybles with and for Friends',
       '4PM-6PM': 'Geolocationism',
       '6PM-8PM': 'Zoe\'s show',
-      '8PM-10PM': 'Fuck Money Get Bitches',
+      '8PM-10PM': 'F**k Money Get B*****s',
       '10PM-12AM': 'Rhythm in Flux'
     },
     Friday: {
@@ -98,49 +98,99 @@ const schedule = {
     const [currentShow, setCurrentShow] = useState('');
   
     useEffect(() => {
-        const updateCurrentShow = () => {
-            const now = new Date();
-            const dayOfWeek = now.toLocaleDateString('en-US', { weekday: 'long' });
-            const currentHour = now.getHours();
-            const currentMinute = now.getMinutes();
-            const currentTime = currentHour * 100 + currentMinute;
-            const isPM = currentHour >= 12;
-          
-            if (schedule[dayOfWeek]) {
-              for (const timeSlot in schedule[dayOfWeek]) {
-                const [start, end] = timeSlot.split('-');
-                const [startHour, startMinute] = start.split(':').map(part => parseInt(part, 10));
-                const [endHour, endMinute] = end.split(':').map(part => parseInt(part, 10));
-
-const adjustedStartHour = isPM && startHour !== 12 ? startHour + 12 : startHour;
-const adjustedEndHour = isPM && endHour !== 12 ? endHour + 12 : endHour;
-
-const startTime = adjustedStartHour * 100 + (startMinute !== undefined ? startMinute : 0);
-
-const endTime = adjustedEndHour * 100 + (endMinute !== undefined ? endMinute : 0);
-
-console.log('Start Time:', startTime, 'End Time:', endTime);
-
-          
-                if (currentTime >= startTime && currentTime < endTime) {
-                  setCurrentShow(schedule[dayOfWeek][timeSlot]);
-                  return;
-                }
-              }
+      const updateCurrentShow = () => {
+        const now = new Date();
+        const dayOfWeek = now.toLocaleDateString('en-US', { weekday: 'long' });
+        const currentTime = now.getHours() * 100 + now.getMinutes();
+      
+        console.log('Current Day:', dayOfWeek);
+        console.log('Current Time:', currentTime);
+      
+        let showFound = false;
+      
+        if (schedule[dayOfWeek]) {
+          for (const timeSlot in schedule[dayOfWeek]) {
+            const [start, end] = timeSlot.split('-');
+            const [startHour, startMinute, startPeriod] = parseTimeString(start);
+            const [endHour, endMinute, endPeriod] = parseTimeString(end);
+      
+            if (isNaN(startHour) || isNaN(startMinute) || isNaN(endHour) || isNaN(endMinute)) {
+              console.error('Invalid time format:', start, end);
+              continue; // Skip this iteration and move to the next time slot
             }
-          
-            setCurrentShow('');
-          };
-          
-           
+            if (endHour ==14){
+              continue
+            }
+      
+            const startTime = convertTo24HourFormat(startHour, startPeriod) * 100 + startMinute;
+            let endTime = convertTo24HourFormat(endHour, endPeriod) * 100 + endMinute;
+            console.log('Start hour:', startHour);
+            console.log('end hour:', endHour);
+      
+      
+            // console.log('Start Time:', startTime);
+            // console.log('End Time:', endTime);
+      
+            if (currentTime >= startTime && currentTime < endTime) {
+              // Use functional update to ensure the most up-to-date state value
+              setCurrentShow(prevShow => schedule[dayOfWeek][timeSlot]);
+              showFound = true;
+              break;
+            }else if( endTime == 0){
+              endTime = 2400
+              console.log("time slot",timeSlot )
+
+              setCurrentShow(prevShow => schedule[dayOfWeek][timeSlot]);
+              showFound = true;
+
+
+
+            }
+          }
+        }
+      
+        if (!showFound) {
+          setCurrentShow('');
+        }
+      
+        console.log('Current Show:', currentShow);
+      };
+      
+  
+      const parseTimeString = (timeString) => {
+        const match = timeString.match(/(\d+)(?::(\d+))?\s*([APMapm]{2})?/i);
+        if (!match) {
+          console.error('Invalid time format:', timeString);
+          return [NaN, NaN, ''];
+        }
+        const [, hour, minute, period] = match;
+        return [parseInt(hour, 10) % 12 + (period && period.toLowerCase() === 'pm' ? 12 : 0), minute ? parseInt(minute, 10) : 0, period];
+      };
+      const convertTo24HourFormat = (hour, period) => {
+
+
+        if (period === 'PM' && hour !== 12) {
+
+          return hour + 12;
+        } else if (period === 'AM' && hour === 12) {
+
+          return 0;
+        } else if (period === 'AM' && hour !== 12) {
+          return hour;
+        } else {
+
+          return 12; // For 'pm' and hour === 12
+        }
+      };
+      updateCurrentShow(); // Initial call to set the value
+
       const interval = setInterval(() => {
         updateCurrentShow();
         console.log('Current Show:', currentShow);
       }, 60000);
   
-      updateCurrentShow(); // Initial call to set the value
       return () => clearInterval(interval);
-    }, [currentShow]);
+    }, []); // Empty dependency array, no need to include 'schedule'
   
     return (
       <div>
@@ -154,3 +204,4 @@ console.log('Start Time:', startTime, 'End Time:', endTime);
   }
   
   export default Shows;
+  

@@ -1,37 +1,30 @@
 /* title.css */
 
-.Title {
-      /* Add your existing styles for the Title component */
-    }
-    /* .Title {
-      box-sizing: border-box;
-      width: 100%;
-      display: flex;
-      padding: 1em;
-      margin-bottom: 2em;
-      background-color: #8A7DDA;
-      color: #fff;
-    } */
-    
-    .navbar {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      background-color: #8A7DDA;
-      color: #fff;
-      height: 60px; /* Set the height of the navigation bar */
-    }
-    
-    
-    .nav-link {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 10px;
-      transition: background-color 0.3s ease;
-    
-      &:hover {
-        background-color: #555; /* Change the background color on hover */
-      }
-    }
-    
+.navbar-brand {
+  font-weight: bold !important;
+  font-size: 25px !important;
+  color: #fff !important;
+
+}
+
+.purple {
+  background-color: #8A7DDA !important;
+  color: #fff !important;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white !important;
+  font-weight: bold !important;
+  padding: 10px 8px; /* Reduced padding on top and bottom, 10px on left and right */
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+div.container-fluid{
+  padding-left: 100px;
+  padding-right: 100px;
+
+}

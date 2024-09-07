@@ -15,6 +15,7 @@ import "./Home.css"
 import Shows from './shows';
 const image = require("./logo.png")
 
+const wbarbbq = require("./wbbq.png")
 
 
 
@@ -23,7 +24,10 @@ function Home() {
     <div className="Home">
       {/* <StickyStream/> */}
       <img src={(image)} className="App-logo" alt="logo" />
-      <Shows></Shows>
+     
+      {/* <img src={(wbarbbq)}  className="wbarbbq-image" alt="wbarbbw" /> */}
+
+      {/* <Shows></Shows> */}
 
       <Chat></Chat>
 
