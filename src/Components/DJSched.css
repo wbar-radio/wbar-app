@@ -10,7 +10,9 @@ djsched.css
     align-items: center;
 }
 /* DJSched.css */
-
+h1{
+  color:white
+}
 /* Style for the overall schedule container */
 
   .DjSched {
@@ -32,7 +34,7 @@ djsched.css
   }
   
   .day.active {
-    background-color: #8A7DDA;
+    background-color: black;
     color: #fff;
   }
   
