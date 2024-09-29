@@ -13,7 +13,7 @@ import DJSched from './DjSched';
 
 import "./Home.css"
 import Shows from './shows';
-const image = require("./logo.png")
+const image = require("./streaming.png")
 
 const wbarbbq = require("./wbbq.png")
 
@@ -23,13 +23,12 @@ function Home() {
   return (
     <div className="Home">
       {/* <StickyStream/> */}
-      <img src={(image)} className="App-logo" alt="logo" />
+      {/* <img src={(image)} className="App-logo" alt="logo" /> */}
+
+
+{/* <Chat></Chat> */}
+
      
-      {/* <img src={(wbarbbq)}  className="wbarbbq-image" alt="wbarbbw" /> */}
-
-      {/* <Shows></Shows> */}
-
-      <Chat></Chat>
 
     </div>
     
