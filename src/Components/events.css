@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1C1353;
+    background-color: black;
     color: #fff;
     height: 60px; /* Set the height of the navigation bar */
 }
@@ -41,4 +41,11 @@
 .image-container-past-3,
 .image-container-past-4 {
     margin-left: 20px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black; /* Adds a semi-transparent background */
+  width: 50px; /* Adjust the width */
+  height: 50px; /* Adjust the height */
+  border-radius: 50%; /* Makes the arrow icons circular */
 }

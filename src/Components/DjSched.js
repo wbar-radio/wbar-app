@@ -4,98 +4,99 @@ import { useState, useEffect } from 'react';
 import './DJSched.css'
 const image = require("./wbar-dj-sched.jpg")
 const schedule = {
-    Sunday: {
-      '12AM-2AM': 'TotNite w/Ashley and Grace',
-      '2AM-4AM': 'Sound and Meaning',
-      '6AM-8AM': 'Hyperfolkxation',
-      '8AM-10AM': 'Songbird',
-      '10AM-12PM': 'Atonal Salad for Lunch',
-      '12PM-2PM': 'lo library sinkhole',
-      '2PM-4PM': 'no hoes radio',
-      '4PM-6PM': 'flick the beat',
-      '6PM-8PM': 'unstructured noise',
-      '8PM-10PM': 'Adventures in (Black) Sonic Imaginaries',
-      '10PM-12AM': 'Shabash, Bualadh Bos'
-    },
-    Monday: {
-      '12AM-2AM': 'pompia',
-      '2AM-4AM': 'Indo-western with Ri',
-      '6AM-8AM': 'Shouldv\'ve Been a 70s Baby',
-      '8AM-10AM': ' Wombspace',
-      '10AM-12PM': 'Sound Diaries',
-      '12PM-2PM': 'Normal Music',
-      '2PM-4PM': 'Garden Club of Babylon',
-      '4PM-6PM': 'timepool',
-      '6PM-8PM': 'Tajh\'s show',
-      '8PM-10PM': 'Nefika Adena',
-      '10PM-12AM': 'Breast and Eggs'
-    },
-    Tuesday: {
-      '12AM-2AM': 'Flo-Rida Man: Florida\'s Wackiest People and Best Music',
-      '2AM-4AM': 'Euphoric Summer',
-      '6AM-8AM': 'Janky Jukebox',
-      '8AM-10AM': 'We Fit Together Walking',
-      '10AM-12PM': 'Well, yes!',
-      '12PM-2PM': 'High society',
-      '2PM-4PM': 's^2 speaks',
-      '4PM-6PM': 'Olio: A Miscellaneous Collection',
-      '6PM-8PM': 'Meg\'s show',
-      '8PM-10PM': 'Techno, Buddhism, Counterculture',
-      '10PM-12AM': 'Hypergravity'
-    },
-    Wednesday: {
-      '12AM-2AM': 'saintsteph4nie\'s Chapel',
-      '2AM-4AM': 'Structure Antonym',
-      '6AM-8AM': 'Alphabet Soup',
-      '8AM-10AM': 'Book Club',
-      '10AM-12PM': 'The Dyke Den',
-      '12PM-2PM': 'Banger? I hardly know her!',
-      '2PM-4PM': 'The Worker Drones',
-      '4PM-6PM': 'Isis\'s show',
-      '6PM-8PM': 'OFFICE HOURS',
-      '8PM-10PM': 'cafecito',
-      '10PM-12AM': 'H!ICO (Help! I\'m Chronically Online)'
-    },
-    Thursday: {
-      '12AM-2AM': 'Electronika',
-      '2AM-4AM': 'On Rhythms',
-      '6AM-8AM': 'Bicoastal Baddie',
-      '8AM-10AM': 'West Coast Cowboy',
-      '10AM-12PM': 'HALO HALO',
-      '12PM-2PM': 'punk as folk',
-      '2PM-4PM': 'Graybles with and for Friends',
-      '4PM-6PM': 'Geolocationism',
-      '6PM-8PM': 'Zoe\'s show',
-      '8PM-10PM': 'F**k Money Get B*****s',
-      '10PM-12AM': 'Rhythm in Flux'
-    },
-    Friday: {
-      '12AM-2AM': 'DJ CHINA HEAVEN',
-      '2AM-4AM': 'Winter fever dream',
-      '6AM-8AM': 'worldlist',
-      '8AM-10AM': 'Are You Still Watching?',
-      '10AM-12PM': 'Beans from the can',
-      '12PM-2PM': 'gulf',
-      '2PM-4PM': 'Steel spiel',
-      '4PM-6PM': 'Manifest-Station',
-      '6PM-8PM': 'De Profundis: Music is the Journey',
-      '8PM-10PM': 'The Slavgaze Special',
-      '10PM-12AM': 'girls only domino club'
-    },
-    Saturday: {
-      '12AM-2AM': 'Edging on the air',
-      '2AM-4AM': 'Regicide Radio',
-      '6AM-8AM': 'Jojo flows', 
-      '8AM-10AM': 'she sleeps with you and she prays for me',
-      '10AM-12PM': 'POST PUNK DIASPORA',
-      '12PM-2PM': 'Ellie and Piper have spoken',
-      '2PM-4PM': 'AFRIXA',
-      '4PM-6PM': 'yur mum\'s house',
-      '6PM-8PM': 'WBARCH Madness',
-      '8PM-10PM': 'Blood&Bubblegum',
-      '10PM-12AM': 'Holiday at Columbia'
-    }
-  };
+  Monday: {
+    '12AM-2AM': 'Bootgaze',
+    '2AM-4AM': 'Audio Aliens',
+    '6AM-8AM': 'Doesn\'t Drink, Smoke, Laugh',
+    '8AM-10AM': 'Wordlist',
+    '10AM-12PM': 'Heartbroken the Old Fashioned Way!',
+    '12PM-2PM': 'The Dyke Den',
+    '2PM-4PM': 'Holiday at Columbia',
+    '4PM-6PM': 'Slut! Pop!',
+    '6PM-8PM': 'I just know it smells crazy in there',
+    '8PM-10PM': 'Sway\'s Salon',
+    '10PM-12AM': 'Moving in Silence'
+  },
+  Tuesday: {
+    '12AM-2AM': 'a(drena)lina',
+    '2AM-4AM': 'Die Reisen',
+    '6AM-8AM': 'sonidos sin fronteras',
+    '8AM-10AM': 'kick the can',
+    '10AM-12PM': 'Chai Fidelity',
+    '12PM-2PM': 'Pull up to the bumper',
+    '2PM-4PM': 'Meg\'s show',
+    '4PM-6PM': 'YUJA',
+    '6PM-8PM': 'Kuch Kuch',
+    '8PM-10PM': 'Pierogi Pop',
+    '10PM-12AM': 'New Wave Worldwide'
+  },
+  Wednesday: {
+    '12AM-2AM': 'saintsteph4nie\'s chapel',
+    '2AM-4AM': 'From the Nest',
+    '6AM-8AM': 'Jazz chronicles',
+    '8AM-10AM': 'We Fit Together Walking',
+    '10AM-12PM': 'limbo',
+    '12PM-2PM': 'turn my swag on',
+    '2PM-4PM': 'Talk Theatery to Me',
+    '4PM-6PM': 'beans and a horse',
+    '6PM-8PM': 'OFFICE HOURS',
+    '8PM-10PM': 'Sydney',
+    '10PM-12AM': 'Only Women DJ With Degree'
+  },
+  Thursday: {
+    '12AM-2AM': 'Regicide Radio',
+    '2AM-4AM': 'Techno City',
+    '6AM-8AM': 'Cosmos & Convos',
+    '8AM-10AM': 'jujuonthatbeat',
+    '10AM-12PM': 'You Know You\'re Black When',
+    '12PM-2PM': 'Pink Triangles',
+    '2PM-4PM': 'Adventures in Black Sonic Imaginaries',
+    '4PM-6PM': 'dog songs',
+    '6PM-8PM': 'Maural support',
+    '8PM-10PM': 'Shabash Bualadh Bos',
+    '10PM-12AM': 'gatita'
+  },
+  Friday: {
+    '12AM-2AM': 'Rhythm of the Ages',
+    '2AM-4AM': 'girls! girls! girls!',
+    '6AM-8AM': 'yv:3sdropping',
+    '8AM-10AM': 'Cowgirl Daydreams',
+    '10AM-12PM': 'ZINGO FM',
+    '12PM-2PM': 'Zoe',
+    '2PM-4PM': 'River Rock (and also folk)',
+    '4PM-6PM': 'inter/desire',
+    '6PM-8PM': 'flama/echo',
+    '8PM-10PM': 'I Said What I Said!',
+    '10PM-12AM': 'Afrohouse sessions'
+  },
+  Saturday: {
+    '12AM-2AM': 'Bookends',
+    '2AM-4AM': 'Interstellar',
+    '6AM-8AM': 'Grrrl Germs',
+    '8AM-10AM': 'Trust.',
+    '10AM-12PM': 'your favorite artist\'s favorite artists',
+    '12PM-2PM': 'low library sinkhole',
+    '2PM-4PM': 'clay play club',
+    '4PM-6PM': 'Ellie and Friends Have Spoken',
+    '6PM-8PM': 'breadfruit',
+    '8PM-10PM': 'Sanctuaries of Rhythm',
+    '10PM-12AM': 'OPEN HOURS'
+  },
+  Sunday: {
+    '12AM-2AM': 'Send Noods',
+    '2AM-4AM': 'TotNite',
+    '6AM-8AM': 'That’s Bible',
+    '8AM-10AM': 'WBARCH Madness',
+    '10AM-12PM': 'Book Club!',
+    '12PM-2PM': 'Sangai',
+    '2PM-4PM': 'The Garden of Earthly Delights',
+    '4PM-6PM': 'AstroGroove',
+    '6PM-8PM': 'Beans from the Can',
+    '8PM-10PM': 'Songbird',
+    '10PM-12AM': 'str4wb3rry c0mput3r'
+  }
+};
+
   
 
   function ShowWithTime({ time, show }) {
