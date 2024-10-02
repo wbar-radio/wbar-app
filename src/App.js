@@ -18,10 +18,10 @@ import Events from './Components/Events';
 import DjSched from './Components/DjSched';
 
 function App() {
-  const [isChatVisible, setIsChatVisible] = useState(true); // Set initial state to true for automatic visibility
+  const [isChatVisible, setIsChatVisible] = useState(true); // Manage chat visibility state
 
   const toggleChat = () => {
-    setIsChatVisible((prev) => !prev); // Toggle chat visibility
+      setIsChatVisible((prevVisible) => !prevVisible); // Toggle chat visibility
   };
 
   return (
@@ -37,6 +37,33 @@ function App() {
           <Route path="/" element={<DjSched />} exact />
         </Routes>
       </Router>
+      <button 
+    onClick={toggleChat} 
+    style={{
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        width: '150px',               // Fixed width for consistency
+        backgroundColor: '#ffffff',   // White background to match the design
+        color: '#000000',             // Black text color
+        padding: '10px 0',            // Adjust padding to maintain button height
+        borderRadius: '25px',         // Rounded corners for smooth look
+        fontWeight: 'bold',           // Bold font to match your site's style
+        fontSize: '16px',             // Adjust font size for readability
+        textAlign: 'center',          // Ensure text is centered
+        cursor: 'pointer',            // Pointer cursor for interactivity
+        zIndex: '2000',               // Ensure button is above other elements
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Shadow for depth
+        transition: 'background-color 0.3s ease, transform 0.2s ease', // Smooth hover effect
+    }}
+    onMouseEnter={(e) => e.target.style.backgroundColor = '#f0f0f0'} // Lighten background on hover
+    onMouseLeave={(e) => e.target.style.backgroundColor = '#ffffff'}  // Reset background color on mouse out
+>
+    {isChatVisible ? 'Hide Chat' : 'Show Chat'}
+</button>
+
+            {/* Chat component */}
+            <Chat visible={isChatVisible} />
       <div></div>
     </div>
   );
