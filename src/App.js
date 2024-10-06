@@ -5,7 +5,8 @@ import StickyStream from './Components/StickyStream';
 import Chat from './Components/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css.map';
-
+import SpinitronWidget from './Components/SpinitronWidget';
+import SpinitronData from './Components/SpinitronData';
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,10 +28,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Title toggleChat={toggleChat} />
+        <Title />
         <StickyStream />
-        <Chat visible={isChatVisible} />
-        <Routes>
+]        <Routes>
           <Route path="/About" element={<About />} exact />
           <Route path="/Events" element={<Events />} exact />
           {/* <Route path="/DjSched" element={<DjSched />} exact /> */}
@@ -38,6 +38,7 @@ function App() {
         </Routes>
       </Router>
       <button 
+    
     onClick={toggleChat} 
     style={{
         position: 'fixed',
@@ -59,13 +60,18 @@ function App() {
     onMouseEnter={(e) => e.target.style.backgroundColor = '#f0f0f0'} // Lighten background on hover
     onMouseLeave={(e) => e.target.style.backgroundColor = '#ffffff'}  // Reset background color on mouse out
 >
+
     {isChatVisible ? 'Hide Chat' : 'Show Chat'}
 </button>
+{/* <iframe src="//widgets.spinitron.com/widget/now-playing-v2?station=WBAR&num=5&sharing=1&cover=1&player=1&merch=1" allow="encrypted-media"></iframe> */}
 
             {/* Chat component */}
             <Chat visible={isChatVisible} />
+            {/* <SpinitronData></SpinitronData> */}
       <div></div>
-    </div>
+      </div>
+
+    
   );
 }
 
