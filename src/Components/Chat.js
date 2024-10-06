@@ -7,7 +7,6 @@ function Chat({ visible }) {
     let isResizing = false;
     let offset = { x: 0, y: 0 };
 
-    // Effect for handling drag events
     useEffect(() => {
         const chatContainer = chatContainerRef.current;
         if (!chatContainer) return;
@@ -34,14 +33,20 @@ function Chat({ visible }) {
             chatContainer.style.cursor = 'grab';
         };
 
-        chatContainer.addEventListener("mousedown", handleMouseDown);
-        document.addEventListener("mousemove", handleMouseMove);
-        document.addEventListener("mouseup", handleMouseUp);
+        // Only add dragging event listeners if not on mobile
+        const isMobile = window.innerWidth <= 768;
+        if (!isMobile) {
+            chatContainer.addEventListener("mousedown", handleMouseDown);
+            document.addEventListener("mousemove", handleMouseMove);
+            document.addEventListener("mouseup", handleMouseUp);
+        }
 
         return () => {
-            chatContainer.removeEventListener("mousedown", handleMouseDown);
-            document.removeEventListener("mousemove", handleMouseMove);
-            document.removeEventListener("mouseup", handleMouseUp);
+            if (!isMobile) {
+                chatContainer.removeEventListener("mousedown", handleMouseDown);
+                document.removeEventListener("mousemove", handleMouseMove);
+                document.removeEventListener("mouseup", handleMouseUp);
+            }
         };
     }, []);
 
@@ -49,11 +54,11 @@ function Chat({ visible }) {
     useEffect(() => {
         const chatContainer = chatContainerRef.current;
         if (chatContainer && visible) {
-            chatContainer.style.left = '100px';
-            chatContainer.style.top = '100px';
-            chatContainer.style.position = 'absolute';
-            chatContainer.style.zIndex = '1000';
             const isMobile = window.innerWidth <= 768;
+            chatContainer.style.position = isMobile ? 'fixed' : 'absolute'; // Use fixed on mobile
+            chatContainer.style.left = isMobile ? '10px' : '100px'; // Adjust left position for mobile
+            chatContainer.style.bottom = isMobile ? '10px' : '100px'; // Adjust top position for mobile
+            chatContainer.style.zIndex = '1000';
             chatContainer.style.width = isMobile ? '300px' : '400px';
             chatContainer.style.height = isMobile ? '400px' : '600px';
         }
