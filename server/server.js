@@ -1,25 +1,18 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const app = express();
-const PORT = 3001;
+const port = 5001; // Choose any available port
 
+// Middleware
 app.use(cors());
-app.use(bodyParser.json());
-app.use(logger);
+app.use(express.json());
 
+// Sample API route
 app.get('/', (req, res) => {
-  const data = { message: 'Hello from Node.js backend!' };
-  res.json(data);
+  res.send('Hello from the backend!');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// Start server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
-
-
-function logger(req, res, next) {
-  console.log(req.originalUrl)
-  next()
-}
