@@ -11,8 +11,8 @@ function About() {
       </section>
 
       <section className="section">
-        <h2>Meet the Staff</h2>
-        <p>description here</p>
+        <h2>Meet the WBAR Staff</h2>
+        <p></p>
         <div className="grid-container">
           <div className="grid-item">
           
@@ -23,7 +23,19 @@ function About() {
           <div className="grid-item">
           
           </div>
+          <div className="grid-item">
+          
+          </div>
         </div>
+      </section>
+
+      <section className="section">
+        <h2>Socials</h2>
+        <ul className="social-links">
+          <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+        </ul>
       </section>
     </div>
   );
