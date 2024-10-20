@@ -1,9 +1,7 @@
 djsched.css
-
 .spacer {
     height: 20px; /* Adjust the height as needed */
 }
-
 .image-container {
     display: flex;
     justify-content: center;
@@ -14,14 +12,13 @@ h1{
   color:white
 }
 /* Style for the overall schedule container */
-
   .DjSched {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 20px;
   }
   .day {
-    padding: 20px;
+    /*padding: 20px;*/
     background-color: #f8f9fa;
     border: 1px solid #dee2e6;
     border-radius: 5px;
@@ -35,25 +32,34 @@ h1{
   
   .day.active {
     background-color: black;
-    color: #fff;
+    color: white;
   }
   
   /* Day name */
   .day-name {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
     margin-bottom: 10px;
+    color: white;
   }
   
   /* Show container */
   .show {
     padding: 10px 0;
     border-bottom: 1px solid #ccc;
-  }
+    width: 50%; /* Adjust this value to control the length of the border */
+    margin: 0 auto; /* Center the element */
+}
+
+.current-show {
+  margin: 20px 0;
+  color: white; /* Adjust as needed */
+}
   
   /* Show name */
   .show-name {
     font-weight: bold;
+    color: white;
   }
   
   /* Time */

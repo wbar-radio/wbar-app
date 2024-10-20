@@ -5,8 +5,8 @@ import StickyStream from './Components/StickyStream';
 import Chat from './Components/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css.map';
-import SpinitronWidget from './Components/SpinitronWidget';
-import SpinitronData from './Components/SpinitronData';
+/*import SpinitronWidget from './Components/SpinitronWidget';
+import SpinitronData from './Components/SpinitronData';*/
 import {
   BrowserRouter as Router,
   Routes,
