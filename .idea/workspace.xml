@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="chat btn moved to chat window and working">
-      <change afterPath="$PROJECT_DIR$/client/src/Components/Chat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="close chat on right">
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/DJSched.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/DJSched.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/shows.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/shows.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +106,7 @@
       <workItem from="1729174883494" duration="18000" />
       <workItem from="1729445156251" duration="3806000" />
       <workItem from="1729653552181" duration="865000" />
-      <workItem from="1729689957270" duration="7991000" />
+      <workItem from="1729689957270" duration="8340000" />
     </task>
     <task id="LOCAL-00001" summary="fetch schedule from server.js">
       <option name="closed" value="true" />
@@ -148,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729695731020</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="close chat on right">
+      <option name="closed" value="true" />
+      <created>1729698400546</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729698400546</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +170,7 @@
     <MESSAGE value="compartmentalize api call" />
     <MESSAGE value="start connect to db" />
     <MESSAGE value="chat btn moved to chat window and working" />
-    <option name="LAST_COMMIT_MESSAGE" value="chat btn moved to chat window and working" />
+    <MESSAGE value="close chat on right" />
+    <option name="LAST_COMMIT_MESSAGE" value="close chat on right" />
   </component>
 </project>
