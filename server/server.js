@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 5001; // Choose any available port
+const port = 5001;
 const schedule = {
   Monday: {
     '12AM-2AM': 'Bootgaze',
