@@ -5,6 +5,7 @@ import StickyStream from './Components/StickyStream';
 import Chat from './Components/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css.map';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import {
     BrowserRouter as Router,
     Routes,

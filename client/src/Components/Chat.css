@@ -1,0 +1,7 @@
+#close-chat {
+    color: var(--bs-danger);
+    text-align: right;
+    cursor: pointer;
+}
+
+

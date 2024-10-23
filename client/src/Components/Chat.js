@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
+import './Chat.css';
 
 function Chat() {
     const chatContainerRef = useRef(null);
@@ -66,7 +67,11 @@ function Chat() {
         }
     }, [visibility]);
 
-    if (!visibility) return <button onClick={() => setVisibility(!visibility)}>Show chat</button>;
+    if (!visibility) return (
+        <button className={'btn btn-primary btn-lg'} onClick={() => setVisibility(!visibility)}>
+            Show chat <i className={'bi bi-chat-fill'}></i>
+        </button>
+    );
 
     return (
         <div
@@ -76,8 +81,6 @@ function Chat() {
                 cursor: 'grab',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
                 padding: '20px',
                 border: '1px solid #3498db',
                 borderRadius: '8px',
@@ -85,7 +88,10 @@ function Chat() {
                 position: 'relative',
             }}
         >
-            <button onClick={() => setVisibility(!visibility)}>{visibility ? "Hide Chat" : "Show Chat"}</button>
+            <div id={"chat-header"} className={'row'}>
+                {/*<span className={'spacer'}></span>*/}
+                <i id={"close-chat"} className={"bi bi-x h2"} onClick={() => setVisibility(!visibility)}></i>
+            </div>
             <iframe
                 title="chat"
                 src="https://minnit.chat/c/WBAR?embed&&nickname="
@@ -113,7 +119,8 @@ function Chat() {
                 }}
             />
         </div>
-    );
+    )
+        ;
 }
 
 export default Chat;
