@@ -5,80 +5,68 @@ import {useDraggable} from '@dnd-kit/core';
 function Chat() {
     const [isVisible, setIsVisible] = useState(false);
     const [deltaOffset, setDeltaOffset] = useState({x: 0, y: 0});
-    const [finalPosition, setFinalPosition] = useState({x: 0, y: 0});
+    const [finalOffset, setFinalOffset] = useState({x: 0, y: 0});
     const [isMinimized, setIsMinimized] = useState(false);
-
     const {attributes, listeners, setNodeRef, transform} = useDraggable({
         id: 'chat',
     });
 
-
     useEffect(() => {
         if (transform) {
-            setIsMinimized(false)
-            const newDeltaPosition = {x: transform.x, y: transform.y};
-            setDeltaOffset(newDeltaPosition);
-
-            const newX = finalPosition.x + newDeltaPosition.x;
-            const newY = finalPosition.y + newDeltaPosition.y;
-
-            console.log(newX, newY, window.innerWidth, window.innerHeight);
-
+            setIsMinimized(false);
+            const newDeltaOffset = {x: transform.x, y: transform.y};
+            setDeltaOffset(newDeltaOffset);
         }
-    }, [transform, finalPosition, isMinimized]);
-
+    }, [transform, isMinimized]);
 
     const handleDragEnd = () => {
-        setFinalPosition(prev => ({
-            x: prev.x + deltaOffset.x,
-            y: prev.y + deltaOffset.y,
+        setFinalOffset(prev => ({
+            x: prev.x + deltaOffset.x, y: prev.y + deltaOffset.y,
         }));
         setDeltaOffset({x: 0, y: 0});
     };
 
     const unMinimizeChat = () => {
-        setIsMinimized(false)
+        setIsMinimized(false);
         const chatHeight = document.getElementById('chat-container')?.offsetHeight;
         const offsetHeight = chatHeight - document.getElementById('chat-header')?.offsetHeight;
-        setFinalPosition({x: finalPosition.x, y: 0})
-    }
+        setFinalOffset({x: finalOffset.x, y: 0});
+    };
 
     const minimizeChat = () => {
         setIsMinimized(true);
         const chatHeight = document.getElementById('chat-container')?.offsetHeight;
         const offsetHeight = chatHeight - document.getElementById('chat-header')?.offsetHeight;
-        setFinalPosition({x: finalPosition.x, y: offsetHeight})
+        setFinalOffset({x: finalOffset.x, y: offsetHeight});
     };
 
     let style = {
-        transform: `translate3d(${deltaOffset.x + finalPosition.x}px, ${finalPosition.y + deltaOffset.y}px, 0)`,
+        transform: `translate3d(${deltaOffset.x + finalOffset.x}px, ${finalOffset.y + deltaOffset.y}px, 0)`,
+        touchAction: 'none', // Prevent default touch actions
+
     };
 
+    if (!isVisible) return (<button
+            id={'show-chat-btn'}
+            className={'btn btn-dark btn-lg'}
+            onClick={() => setIsVisible(!isVisible)}
+        >
+            <i className={'bi bi-chat-fill'}></i> <span>Show chat</span>
+        </button>);
 
-    if (!isVisible)
-        return (
-            <button
-                id={'show-chat-btn'}
-                className={'btn btn-dark btn-lg'}
-                onClick={() => setIsVisible(!isVisible)}
-            >
-                <i className={'bi bi-chat-fill'}></i> <span>Show chat</span>
-            </button>
-        );
-
-    return (
-        <div
+    return (<div
             id={"chat-container"}
             ref={setNodeRef}
             style={style}
             onMouseUp={handleDragEnd}
+            onTouchEnd={handleDragEnd}
         >
             <div id={'chat-header'}>
                 <i
                     id={'close-chat'}
                     className={'bi bi-x h2'}
                     onClick={() => {
-                        setFinalPosition({x: 0, y: 0});
+                        setFinalOffset({x: 0, y: 0});
                         setIsMinimized(false);
                         setIsVisible(false);
                     }}
@@ -100,17 +88,13 @@ function Chat() {
                 title='chat'
                 src='https://minnit.chat/c/WBAR?embed&&nickname='
                 style={{
-                    border: 'none',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '8px 8px 0 0',
+                    border: 'none', width: '100%', height: '100%', borderRadius: '8px 8px 0 0',
                 }}
             ></iframe>
-            <a href='https://minnit.chat/c/WBAR' style={{marginTop: '10px'}}>
+            <a href='https://minnit.chat/c/WBAR' target={'_blank'} rel={'noreferrer'} style={{marginTop: '10px'}}>
                 Open in new tab
             </a>
-        </div>
-    );
+        </div>);
 }
 
 export default Chat;

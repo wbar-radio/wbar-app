@@ -31,9 +31,11 @@
 
 #chat-h-grip {
     cursor: move;
-    margin: auto;
+    /*margin: auto;*/
+    padding: 0 10% ;
 }
-#chat-h-grip:hover{
+
+#chat-h-grip:hover {
     color: var(--bs-black);
 }
 
@@ -41,9 +43,25 @@
     color: var(--bs-danger);
     cursor: pointer;
 }
+
 #chat-to-margin {
     cursor: pointer;
 }
+
 .rotate-180 {
     transform: rotate(180deg);
+}
+
+#user-info-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    #chat-container {
+        width: 90%;
+        height: 60%;
+        bottom: 5px;
+        right: 5%;
+    }
 }
