@@ -1,12 +1,47 @@
-#close-chat {
-    color: var(--bs-danger);
-    text-align: right;
-    cursor: pointer;
-}
 
 #show-chat-btn {
     position: fixed;
     bottom: 10px;
     left: 10px;
     z-index: 1000;
+}
+
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 20px 20px;
+    border: 1px solid #3498db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1000;
+    width: 400px;
+    height: 600px;
+}
+
+#chat-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#chat-h-grip {
+    cursor:move;
+    margin: auto;
+}
+#chat-h-grip:hover{
+    color: var(--bs-black);
+}
+
+#close-chat {
+    color: var(--bs-danger);
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+.bi-caret-up-fill {
+    transform: rotate(-45deg);
 }

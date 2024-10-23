@@ -17,19 +17,27 @@ import About from './Components/About';
 import Events from './Components/Events';
 import DjSched from './Components/DjSched';
 
+import {closestCorners, DndContext, useDroppable} from "@dnd-kit/core";
+
+
 function App() {
+    const {setNodeRef} = useDroppable({
+        id: 'everything-but-navbar',
+    });
     return (
-        <>
+        <DndContext>
             <div className="App">
                 <Router>
                     <Title/>
                     <StickyStream/>
-                    ] <Routes>
-                    <Route path="/About" element={<About/>} exact/>
-                    <Route path="/Events" element={<Events/>} exact/>
-                    {/* <Route path="/DjSched" element={<DjSched />} exact /> */}
-                    <Route path="/" element={<DjSched/>} exact/>
-                </Routes>
+                    <div ref={setNodeRef}>
+                        <Routes>
+                            <Route path="/About" element={<About/>} exact/>
+                            <Route path="/Events" element={<Events/>} exact/>
+                            {/* <Route path="/DjSched" element={<DjSched />} exact /> */}
+                            <Route path="/" element={<DjSched/>} exact/>
+                        </Routes>
+                    </div>
                 </Router>
 
                 {/* <iframe src="//widgets.spinitron.com/widget/now-playing-v2?station=WBAR&num=5&sharing=1&cover=1&player=1&merch=1" allow="encrypted-media"></iframe> */}
@@ -39,7 +47,7 @@ function App() {
 
             </div>
             <Chat/>
-        </>
+        </DndContext>
 
     )
         ;
