@@ -62,7 +62,7 @@ function Chat() {
                     id={'close-chat'}
                     className={'bi bi-x h2'}
                     onClick={() => {
-                        console.log("clicked");
+                        setFinalPosition({ x: 0, y: 0 })
                         setIsVisible(false)
                     }}
                 ></i>
