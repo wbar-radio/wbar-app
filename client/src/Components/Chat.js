@@ -67,6 +67,20 @@ function Chat() {
         }
     }, [visibility]);
 
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                setVisibility(false);
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
     if (!visibility) return (
         <button id={'show-chat-btn'} className={'btn btn-primary btn-lg'} onClick={() => setVisibility(!visibility)}>
             Show chat <i className={'bi bi-chat-fill'}></i>

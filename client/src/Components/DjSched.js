@@ -1,12 +1,7 @@
-import React from 'react'
-import {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import './DJSched.css';
 
-import './DJSched.css'
-
-const image = require("./wbar-dj-sched.jpg")
-
-
-function ShowWithTime({time, show}) {
+function ShowWithTime({ time, show }) {
     return (
         <div className="show">
             <div className="show-name">{show}</div>
@@ -17,26 +12,27 @@ function ShowWithTime({time, show}) {
 
 function DJSched() {
     const [activeDay, setActiveDay] = useState(null);
-
     const [schedule, setSchedule] = useState({});
     const [loading, setLoading] = useState(true);
+
     const fetchSchedule = async () => {
         setLoading(true);
-        fetch('http://localhost:5001/api/schedule')
-            .then((response) => response.json())
-            .then((data) => {
-                setSchedule(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Error fetching schedule:', error);
-                setLoading(false);
-            });
-    }
+        try {
+            const response = await fetch('http://localhost:5001/api/schedule');
+            const data = await response.json();
+            setSchedule(data);
+        } catch (error) {
+            console.error('Error fetching schedule:', error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-    // Fetch schedule data from the API (the server must be running on http://localhost:5001)
     useEffect(() => {
-        fetchSchedule()
+        const fetchData = async () => {
+            await fetchSchedule();
+        };
+        fetchData();
     }, []);
 
     const toggleDay = (day) => {
@@ -54,7 +50,7 @@ function DJSched() {
                             {activeDay === day && (
                                 <div className="schedule">
                                     {Object.entries(schedule[day]).map(([time, show]) => (
-                                        <ShowWithTime key={time} time={time} show={show}/>
+                                        <ShowWithTime key={time} time={time} show={show} />
                                     ))}
                                 </div>
                             )}

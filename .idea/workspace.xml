@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="close chat on right">
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.css" afterDir="false" />
+    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="show chat floats on bottom left">
       <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +104,7 @@
       <workItem from="1729174883494" duration="18000" />
       <workItem from="1729445156251" duration="3806000" />
       <workItem from="1729653552181" duration="865000" />
-      <workItem from="1729689957270" duration="8340000" />
+      <workItem from="1729689957270" duration="8704000" />
     </task>
     <task id="LOCAL-00001" summary="fetch schedule from server.js">
       <option name="closed" value="true" />
@@ -148,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729698400546</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="show chat floats on bottom left">
+      <option name="closed" value="true" />
+      <created>1729698839724</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729698839724</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +177,7 @@
     <MESSAGE value="start connect to db" />
     <MESSAGE value="chat btn moved to chat window and working" />
     <MESSAGE value="close chat on right" />
-    <option name="LAST_COMMIT_MESSAGE" value="close chat on right" />
+    <MESSAGE value="show chat floats on bottom left" />
+    <option name="LAST_COMMIT_MESSAGE" value="show chat floats on bottom left" />
   </component>
 </project>
