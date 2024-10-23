@@ -13,7 +13,6 @@ function Chat() {
 
     useEffect(() => {
         if (transform) {
-            console.log("update final position", finalPosition)
             setDeltaPosition({ x: transform.x, y: transform.y });
         }
     }, [transform]);
