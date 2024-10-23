@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
-function Chat({ visible }) {
+function Chat() {
     const chatContainerRef = useRef(null);
     const resizeHandleRef = useRef(null);
     let isDragging = false;
     let isResizing = false;
-    let offset = { x: 0, y: 0 };
+    let offset = {x: 0, y: 0};
+
+    const [visibility, setVisibility] = useState(false);
 
     useEffect(() => {
         const chatContainer = chatContainerRef.current;
@@ -53,7 +55,7 @@ function Chat({ visible }) {
     // Set initial position and size for the chat container
     useEffect(() => {
         const chatContainer = chatContainerRef.current;
-        if (chatContainer && visible) {
+        if (chatContainer && visibility) {
             const isMobile = window.innerWidth <= 768;
             chatContainer.style.position = isMobile ? 'fixed' : 'absolute'; // Use fixed on mobile
             chatContainer.style.left = isMobile ? '10px' : '100px'; // Adjust left position for mobile
@@ -62,52 +64,53 @@ function Chat({ visible }) {
             chatContainer.style.width = isMobile ? '300px' : '400px';
             chatContainer.style.height = isMobile ? '400px' : '600px';
         }
-    }, [visible]);
+    }, [visibility]);
 
-    if (!visible) return null;
+    if (!visibility) return <button onClick={() => setVisibility(!visibility)}>Show chat</button>;
 
     return (
-        <div 
-            className='Chat' 
-            ref={chatContainerRef} 
-            style={{ 
-                cursor: 'grab', 
-                display: 'flex',          
-                flexDirection: 'column',  
-                alignItems: 'center',     
-                justifyContent: 'center', 
-                padding: '20px',          
-                border: '1px solid #3498db', 
-                borderRadius: '8px',      
+        <div
+            className='Chat'
+            ref={chatContainerRef}
+            style={{
+                cursor: 'grab',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '20px',
+                border: '1px solid #3498db',
+                borderRadius: '8px',
                 backgroundColor: '#ffffff',
                 position: 'relative',
-            }} 
+            }}
         >
-            <iframe 
-                title="chat" 
-                src="https://minnit.chat/c/WBAR?embed&&nickname=" 
-                style={{ 
-                    border: 'none', 
-                    width: '100%', 
-                    height: '100%', 
-                    borderRadius: '8px 8px 0 0', 
-                }} 
+            <button onClick={() => setVisibility(!visibility)}>{visibility ? "Hide Chat" : "Show Chat"}</button>
+            <iframe
+                title="chat"
+                src="https://minnit.chat/c/WBAR?embed&&nickname="
+                style={{
+                    border: 'none',
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '8px 8px 0 0',
+                }}
             ></iframe>
-            
-            <a href="https://minnit.chat/c/WBAR" style={{ marginTop: '10px' }}>Open in new tab</a>
 
-            <div 
-                ref={resizeHandleRef} 
-                style={{ 
-                    width: '15px', 
-                    height: '15px', 
-                    backgroundColor: '#3498db', 
-                    position: 'absolute', 
-                    bottom: '5px', 
-                    right: '5px', 
-                    cursor: 'nwse-resize', 
-                    borderRadius: '50%' 
-                }} 
+            <a href="https://minnit.chat/c/WBAR" style={{marginTop: '10px'}}>Open in new tab</a>
+
+            <div
+                ref={resizeHandleRef}
+                style={{
+                    width: '15px',
+                    height: '15px',
+                    backgroundColor: '#3498db',
+                    position: 'absolute',
+                    bottom: '5px',
+                    right: '5px',
+                    cursor: 'nwse-resize',
+                    borderRadius: '50%'
+                }}
             />
         </div>
     );
