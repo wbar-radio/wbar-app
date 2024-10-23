@@ -1,35 +1,58 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './Chat.css';
-import { useDraggable } from '@dnd-kit/core';
+import {useDraggable} from '@dnd-kit/core';
 
 function Chat() {
     const [isVisible, setIsVisible] = useState(false);
-    const [deltaPosition, setDeltaPosition] = useState({ x: 0, y: 0 });
-    const [finalPosition, setFinalPosition] = useState({ x: 0, y: 0 });
+    const [deltaOffset, setDeltaOffset] = useState({x: 0, y: 0});
+    const [finalPosition, setFinalPosition] = useState({x: 0, y: 0});
+    const [isMinimized, setIsMinimized] = useState(false);
 
-    const { attributes, listeners, setNodeRef, transform } = useDraggable({
+    const {attributes, listeners, setNodeRef, transform} = useDraggable({
         id: 'chat',
     });
 
+
     useEffect(() => {
         if (transform) {
-            setDeltaPosition({ x: transform.x, y: transform.y });
+            setIsMinimized(false)
+            const newDeltaPosition = {x: transform.x, y: transform.y};
+            setDeltaOffset(newDeltaPosition);
+
+            const newX = finalPosition.x + newDeltaPosition.x;
+            const newY = finalPosition.y + newDeltaPosition.y;
+
+            console.log(newX, newY, window.innerWidth, window.innerHeight);
+
         }
-    }, [transform]);
+    }, [transform, finalPosition, isMinimized]);
+
 
     const handleDragEnd = () => {
         setFinalPosition(prev => ({
-            x: prev.x + deltaPosition.x,
-            y: prev.y + deltaPosition.y,
+            x: prev.x + deltaOffset.x,
+            y: prev.y + deltaOffset.y,
         }));
-        setDeltaPosition({ x: 0, y: 0 });
+        setDeltaOffset({x: 0, y: 0});
     };
 
+    const unMinimizeChat = () => {
+        setIsMinimized(false)
+        const chatHeight = document.getElementById('chat-container')?.offsetHeight;
+        const offsetHeight = chatHeight - document.getElementById('chat-header')?.offsetHeight;
+        setFinalPosition({x: finalPosition.x, y: 0})
+    }
+
+    const minimizeChat = () => {
+        setIsMinimized(true);
+        const chatHeight = document.getElementById('chat-container')?.offsetHeight;
+        const offsetHeight = chatHeight - document.getElementById('chat-header')?.offsetHeight;
+        setFinalPosition({x: finalPosition.x, y: offsetHeight})
+    };
 
     let style = {
-        transform: `translate3d(${deltaPosition.x + finalPosition.x}px, ${finalPosition.y+deltaPosition.y}px, 0)`,
+        transform: `translate3d(${deltaOffset.x + finalPosition.x}px, ${finalPosition.y + deltaOffset.y}px, 0)`,
     };
-
 
 
     if (!isVisible)
@@ -39,7 +62,7 @@ function Chat() {
                 className={'btn btn-dark btn-lg'}
                 onClick={() => setIsVisible(!isVisible)}
             >
-                Show chat <i className={'bi bi-chat-fill'}></i>
+                <i className={'bi bi-chat-fill'}></i> <span>Show chat</span>
             </button>
         );
 
@@ -49,22 +72,28 @@ function Chat() {
             ref={setNodeRef}
             style={style}
             onMouseUp={handleDragEnd}
-
         >
             <div id={'chat-header'}>
+                <i
+                    id={'close-chat'}
+                    className={'bi bi-x h2'}
+                    onClick={() => {
+                        setFinalPosition({x: 0, y: 0});
+                        setIsMinimized(false);
+                        setIsVisible(false);
+                    }}
+                    title={'Close chat'}
+                ></i>
                 <i
                     id={'chat-h-grip'}
                     className="h2 bi bi-grip-horizontal"
                     {...listeners}
                     {...attributes}
                 ></i>
-                <i
-                    id={'close-chat'}
-                    className={'bi bi-x h2'}
-                    onClick={() => {
-                        setFinalPosition({ x: 0, y: 0 })
-                        setIsVisible(false)
-                    }}
+                <i id={"chat-to-margin"} className="h5 bi bi-chevron-down"
+                   onClick={isMinimized ? unMinimizeChat : minimizeChat}
+                   style={isMinimized ? {transform: 'rotate(180deg)'} : {}}
+                   title={isMinimized ? 'Maximize' : 'Minimize'}
                 ></i>
             </div>
             <iframe
@@ -77,8 +106,7 @@ function Chat() {
                     borderRadius: '8px 8px 0 0',
                 }}
             ></iframe>
-
-            <a href='https://minnit.chat/c/WBAR' style={{ marginTop: '10px' }}>
+            <a href='https://minnit.chat/c/WBAR' style={{marginTop: '10px'}}>
                 Open in new tab
             </a>
         </div>

@@ -24,12 +24,13 @@
 
 #chat-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
 #chat-h-grip {
-    cursor:move;
+    cursor: move;
     margin: auto;
 }
 #chat-h-grip:hover{
@@ -39,9 +40,10 @@
 #close-chat {
     color: var(--bs-danger);
     cursor: pointer;
-    position: absolute;
-    right: 0;
 }
-.bi-caret-up-fill {
-    transform: rotate(-45deg);
+#chat-to-margin {
+    cursor: pointer;
+}
+.rotate-180 {
+    transform: rotate(180deg);
 }

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="change btn color">
+    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="remove console log and move btn to right">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -106,7 +109,7 @@
       <workItem from="1729653552181" duration="865000" />
       <workItem from="1729689957270" duration="10695000" />
       <workItem from="1729705954670" duration="76000" />
-      <workItem from="1729706465826" duration="7217000" />
+      <workItem from="1729706465826" duration="12142000" />
     </task>
     <task id="LOCAL-00001" summary="fetch schedule from server.js">
       <option name="closed" value="true" />
@@ -188,7 +191,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729700534799</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="remove console log and move btn to right">
+      <option name="closed" value="true" />
+      <created>1729713879518</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729713879518</updated>
+    </task>
+    <task id="LOCAL-00012" summary="remove console log and move btn to right">
+      <option name="closed" value="true" />
+      <created>1729713887887</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729713887887</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +234,7 @@
     <MESSAGE value="fix fetch problem" />
     <MESSAGE value="hide chat on esc" />
     <MESSAGE value="change btn color" />
-    <option name="LAST_COMMIT_MESSAGE" value="change btn color" />
+    <MESSAGE value="remove console log and move btn to right" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove console log and move btn to right" />
   </component>
 </project>
