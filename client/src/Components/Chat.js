@@ -82,7 +82,7 @@ function Chat() {
     }, []);
 
     if (!visibility) return (
-        <button id={'show-chat-btn'} className={'btn btn-primary btn-lg'} onClick={() => setVisibility(!visibility)}>
+        <button id={'show-chat-btn'} className={'btn btn-dark btn-lg'} onClick={() => setVisibility(!visibility)}>
             Show chat <i className={'bi bi-chat-fill'}></i>
         </button>
     );
