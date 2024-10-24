@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import './DJSched.css';
+import React from 'react'
+import { useState, useEffect } from 'react';
 
-function ShowWithTime({ time, show }) {
+import './DJSched.css'
+const image = require("./wbar-dj-sched.jpg")
+
+
+  function ShowWithTime({ time, show }) {
     return (
         <div className="show">
             <div className="show-name">{show}</div>
@@ -12,6 +16,7 @@ function ShowWithTime({ time, show }) {
 
 function DJSched() {
     const [activeDay, setActiveDay] = useState(null);
+
     const [schedule, setSchedule] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -60,6 +65,6 @@ function DJSched() {
             </div>
         </div>
     );
-}
+  }
 
-export default DJSched;
+  export default DJSched;

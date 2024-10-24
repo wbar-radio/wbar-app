@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Title from './Components/Title';
 import StickyStream from './Components/StickyStream';
@@ -7,9 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css.map';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
+  BrowserRouter as Router,
+  Routes,
+  Route,
 } from "react-router-dom";
 import Home from './Components/Home';
 import Footer from './Components/Footer';
