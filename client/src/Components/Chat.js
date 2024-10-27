@@ -1,116 +1,100 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useState} from 'react';
+import './Chat.css';
+import {useDraggable} from '@dnd-kit/core';
 
-function Chat({ visible }) {
-    const chatContainerRef = useRef(null);
-    const resizeHandleRef = useRef(null);
-    let isDragging = false;
-    let isResizing = false;
-    let offset = { x: 0, y: 0 };
+function Chat() {
+    const [isVisible, setIsVisible] = useState(false);
+    const [deltaOffset, setDeltaOffset] = useState({x: 0, y: 0});
+    const [finalOffset, setFinalOffset] = useState({x: 0, y: 0});
+    const [isMinimized, setIsMinimized] = useState(false);
+    const {attributes, listeners, setNodeRef, transform} = useDraggable({
+        id: 'chat',
+    });
 
     useEffect(() => {
-        const chatContainer = chatContainerRef.current;
-        if (!chatContainer) return;
-
-        const handleMouseDown = (e) => {
-            if (isResizing) return;
-            isDragging = true;
-            offset = {
-                x: e.clientX - chatContainer.getBoundingClientRect().left,
-                y: e.clientY - chatContainer.getBoundingClientRect().top,
-            };
-            chatContainer.style.cursor = 'grabbing';
-        };
-
-        const handleMouseMove = (e) => {
-            if (isDragging) {
-                chatContainer.style.left = `${e.clientX - offset.x}px`;
-                chatContainer.style.top = `${e.clientY - offset.y}px`;
-            }
-        };
-
-        const handleMouseUp = () => {
-            isDragging = false;
-            chatContainer.style.cursor = 'grab';
-        };
-
-        // Only add dragging event listeners if not on mobile
-        const isMobile = window.innerWidth <= 768;
-        if (!isMobile) {
-            chatContainer.addEventListener("mousedown", handleMouseDown);
-            document.addEventListener("mousemove", handleMouseMove);
-            document.addEventListener("mouseup", handleMouseUp);
+        if (transform) {
+            setIsMinimized(false);
+            const newDeltaOffset = {x: transform.x, y: transform.y};
+            setDeltaOffset(newDeltaOffset);
         }
+    }, [transform, isMinimized]);
 
-        return () => {
-            if (!isMobile) {
-                chatContainer.removeEventListener("mousedown", handleMouseDown);
-                document.removeEventListener("mousemove", handleMouseMove);
-                document.removeEventListener("mouseup", handleMouseUp);
-            }
-        };
-    }, []);
+    const handleDragEnd = () => {
+        setFinalOffset(prev => ({
+            x: prev.x + deltaOffset.x, y: prev.y + deltaOffset.y,
+        }));
+        setDeltaOffset({x: 0, y: 0});
+    };
 
-    // Set initial position and size for the chat container
-    useEffect(() => {
-        const chatContainer = chatContainerRef.current;
-        if (chatContainer && visible) {
-            const isMobile = window.innerWidth <= 768;
-            chatContainer.style.position = isMobile ? 'fixed' : 'absolute'; // Use fixed on mobile
-            chatContainer.style.left = isMobile ? '10px' : '100px'; // Adjust left position for mobile
-            chatContainer.style.bottom = isMobile ? '10px' : '100px'; // Adjust top position for mobile
-            chatContainer.style.zIndex = '1000';
-            chatContainer.style.width = isMobile ? '300px' : '400px';
-            chatContainer.style.height = isMobile ? '400px' : '600px';
-        }
-    }, [visible]);
+    const unMinimizeChat = () => {
+        setIsMinimized(false);
+        const chatHeight = document.getElementById('chat-container')?.offsetHeight;
+        const offsetHeight = chatHeight - document.getElementById('chat-header')?.offsetHeight;
+        setFinalOffset({x: finalOffset.x, y: 0});
+    };
 
-    if (!visible) return null;
+    const minimizeChat = () => {
+        setIsMinimized(true);
+        const chatHeight = document.getElementById('chat-container')?.offsetHeight;
+        const offsetHeight = chatHeight - document.getElementById('chat-header')?.offsetHeight;
+        setFinalOffset({x: finalOffset.x, y: offsetHeight});
+    };
 
-    return (
-        <div 
-            className='Chat' 
-            ref={chatContainerRef} 
-            style={{ 
-                cursor: 'grab', 
-                display: 'flex',          
-                flexDirection: 'column',  
-                alignItems: 'center',     
-                justifyContent: 'center', 
-                padding: '20px',          
-                border: '1px solid #3498db', 
-                borderRadius: '8px',      
-                backgroundColor: '#ffffff',
-                position: 'relative',
-            }} 
+    let style = {
+        transform: `translate3d(${deltaOffset.x + finalOffset.x}px, ${finalOffset.y + deltaOffset.y}px, 0)`,
+        touchAction: 'none', // Prevent default touch actions
+
+    };
+
+    if (!isVisible) return (<button
+            id={'show-chat-btn'}
+            className={'btn btn-dark btn-lg'}
+            onClick={() => setIsVisible(!isVisible)}
         >
-            <iframe 
-                title="chat" 
-                src="https://minnit.chat/c/WBAR?embed&&nickname=" 
-                style={{ 
-                    border: 'none', 
-                    width: '100%', 
-                    height: '100%', 
-                    borderRadius: '8px 8px 0 0', 
-                }} 
-            ></iframe>
-            
-            <a href="https://minnit.chat/c/WBAR" style={{ marginTop: '10px' }}>Open in new tab</a>
+            <i className={'bi bi-chat-fill'}></i> <span>Show chat</span>
+        </button>);
 
-            <div 
-                ref={resizeHandleRef} 
-                style={{ 
-                    width: '15px', 
-                    height: '15px', 
-                    backgroundColor: '#3498db', 
-                    position: 'absolute', 
-                    bottom: '5px', 
-                    right: '5px', 
-                    cursor: 'nwse-resize', 
-                    borderRadius: '50%' 
-                }} 
-            />
-        </div>
-    );
+    return (<div
+            id={"chat-container"}
+            ref={setNodeRef}
+            style={style}
+            onMouseUp={handleDragEnd}
+            onTouchEnd={handleDragEnd}
+        >
+            <div id={'chat-header'}>
+                <i
+                    id={'close-chat'}
+                    className={'bi bi-x h2'}
+                    onClick={() => {
+                        setFinalOffset({x: 0, y: 0});
+                        setIsMinimized(false);
+                        setIsVisible(false);
+                    }}
+                    title={'Close chat'}
+                ></i>
+                <i
+                    id={'chat-h-grip'}
+                    className="h2 bi bi-grip-horizontal"
+                    {...listeners}
+                    {...attributes}
+                ></i>
+                <i id={"chat-to-margin"} className="h5 bi bi-chevron-down"
+                   onClick={isMinimized ? unMinimizeChat : minimizeChat}
+                   style={isMinimized ? {transform: 'rotate(180deg)'} : {}}
+                   title={isMinimized ? 'Maximize' : 'Minimize'}
+                ></i>
+            </div>
+            <iframe
+                title='chat'
+                src='https://minnit.chat/c/WBAR?embed&&nickname='
+                style={{
+                    border: 'none', width: '100%', height: '100%', borderRadius: '8px 8px 0 0',
+                }}
+            ></iframe>
+            <a href='https://minnit.chat/c/WBAR' target={'_blank'} rel={'noreferrer'} style={{marginTop: '10px'}}>
+                Open in new tab
+            </a>
+        </div>);
 }
 
 export default Chat;
