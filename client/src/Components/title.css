@@ -7,6 +7,12 @@
 
 }
 
+.navbar-brand img {
+  height: 80px;
+  width: 120px; /* Adjust as needed*/
+  display: inline-block;
+}
+
 .purple {
   background-color: #000 !important;
   color: #fff !important;
