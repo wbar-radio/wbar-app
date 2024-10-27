@@ -1,30 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
 import './title.css';
 
 // Import the image
 import wbarImage from './wbar-title-v2.png';
 
-const Title = ({ toggleChat }) => {
-  return (
-    <div className='purple'>
-      <div className="navbar navbar-expand-lg">
-        <div className="container-fluid">
-          {/* Replace the text with the image */}
-          <Link to="/" className="navbar-brand">
-            <img 
-              src={wbarImage} 
-              alt="WBAR" 
-              style={{ height: '40px', display: 'inline-block' }} // Adjusted width and display
-            />
-          </Link>
-          <Link to="/About" className="nav-link">About</Link>
-          <Link to="/Events" className="nav-link">Events</Link>
-          {/* <Link to="/DjSched" className="nav-link">DJ Schedule</Link> */}
-        </div>
-      </div>
-    </div>
-  );
+const Title = () => {
+    return (
+        <Navbar expand="lg" variant='dark'>
+            <Container id={'navbar-container'}>
+                <Navbar.Brand href={"/"}>
+                    <img
+                        src={wbarImage}
+                        alt="WBAR"
+                        style={{height: '40px'}} // Adjusted width and display
+                    />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Collapse id="basic-navbar-nav">
+
+                    <Nav className={'ms-auto'}>
+                        <Nav.Link href="/About" className="nav-link">About</Nav.Link>
+                        <Nav.Link href="/Events" className="nav-link">Events</Nav.Link>
+                    </Nav>
+
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
 }
 
 export default Title;
