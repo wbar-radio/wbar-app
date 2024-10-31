@@ -4,16 +4,30 @@ function Stream() {
     const audioRef = useRef(null);
     const canvasRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const [volume, setVolume] = useState(.5);
     const streamOffset = 2;
-    const ctx = new AudioContext();
+    const ctx = useRef(new AudioContext());
+    const gainNode = useRef(ctx.current.createGain());
 
     useEffect(() => {
         if (audioRef.current) {
-            audioRef.current.crossOrigin = "anonymous"; // Set crossOrigin attribute
-            const source = ctx.createMediaElementSource(audioRef.current);
-            drawWaveform(ctx, source);
+            audioRef.current.crossOrigin = "anonymous";
+            const source = ctx.current.createMediaElementSource(audioRef.current);
+            const analyser = ctx.current.createAnalyser();
+            analyser.fftSize = 256;
+            analyser.smoothingTimeConstant = 0.5;
+
+            source.connect(gainNode.current);
+            gainNode.current.connect(analyser);
+            analyser.connect(ctx.current.destination);
+
+            drawWaveform(analyser);
         }
-    }, [audioRef]);
+    }, [audioRef, isPlaying]);
+
+    useEffect(() => {
+        gainNode.current.gain.value = volume; // Update gain node volume
+    }, [volume]);
 
     const handleTogglePlayState = () => {
         if (isPlaying) {
@@ -27,37 +41,43 @@ function Stream() {
         setIsPlaying(!isPlaying);
     };
 
-    function drawWaveform(audioContext, audioSource) {
+    const handleVolumeChange = (event) => {
+        setVolume(event.target.value);
+    };
+
+    function drawWaveform(analyser) {
         const canvas = canvasRef.current;
         const canvasCtx = canvas.getContext('2d');
-
-        // Create an analyser node
-        const analyser = audioContext.createAnalyser();
-        analyser.fftSize = 256; // Reduce fftSize for smoother waveform
-        analyser.smoothingTimeConstant = 0.5; // Apply smoothing
         const bufferLength = analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
 
-        // Connect the audio source to the analyser
-        audioSource.connect(analyser);
-        analyser.connect(audioContext.destination);
-
-        // Function to draw the waveform
         function draw() {
             requestAnimationFrame(draw);
-
-            analyser.getByteTimeDomainData(dataArray);
 
             canvasCtx.fillStyle = 'rgb(0, 0, 0)';
             canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
             const barWidth = (canvas.width / bufferLength) * 2.5;
+
+            if (!isPlaying) {
+                // Draw a horizontal line when paused
+                canvasCtx.strokeStyle = 'rgba(155,40,221,0.38)';
+                canvasCtx.lineWidth = barWidth;
+                canvasCtx.beginPath();
+                canvasCtx.moveTo(0, canvas.height / 2);
+                canvasCtx.lineTo(canvas.width, canvas.height / 2);
+                canvasCtx.stroke();
+                return;
+            }
+
+            analyser.getByteTimeDomainData(dataArray);
+
             let x = 0;
 
             for (let i = 0; i < bufferLength; i++) {
                 const v = dataArray[i] / 128.0;
                 const y = v * canvas.height / 2;
-                const barHeight = Math.abs(y - canvas.height / 2) * 2; // Calculate bar height
+                const barHeight = Math.abs(y - canvas.height / 2) * 2;
 
                 canvasCtx.fillStyle = 'rgb(155,40,221)';
                 canvasCtx.fillRect(x, canvas.height / 2 - barHeight / 2, barWidth, barHeight);
@@ -75,6 +95,7 @@ function Stream() {
             <i className={`bi h4 ${isPlaying ? "bi-stop-fill" : "bi-play-fill"} text-white`}
                onClick={handleTogglePlayState}/>
             <canvas id="waveformCanvas" ref={canvasRef} width="100em" height="40"></canvas>
+            <input type="range" min="0" max="2" step="0.01" value={volume} onChange={handleVolumeChange} />
         </div>
     );
 }

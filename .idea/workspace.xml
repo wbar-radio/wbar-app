@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="fetch schedule from server.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Stream.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Stream.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Stream.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +102,7 @@
       <workItem from="1729174883494" duration="18000" />
       <workItem from="1729445156251" duration="3806000" />
       <workItem from="1730337155007" duration="1552000" />
-      <workItem from="1730349729297" duration="2951000" />
+      <workItem from="1730349729297" duration="6481000" />
     </task>
     <task id="LOCAL-00001" summary="fetch schedule from server.js">
       <option name="closed" value="true" />
