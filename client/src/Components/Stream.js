@@ -17,7 +17,7 @@ function Stream() {
                 ctx.current = new (window.AudioContext || window.webkitAudioContext)();
                 volumeGainRef.current = ctx.current.createGain();
                 waveformGainRef.current = ctx.current.createGain();
-                waveformGainRef.current.gain.value = 1;
+                waveformGainRef.current.gain.value = 2;
             }
 
             audioRef.current.crossOrigin = "anonymous";
@@ -34,7 +34,7 @@ function Stream() {
             }
 
             if (sourceNode.current && waveformGainRef.current && analyser.current) {
-                sourceNode.current.connect(volumeGainRef.current).connect(analyser.current);
+                sourceNode.current.connect(volumeGainRef.current).connect(waveformGainRef.current).connect(analyser.current);
                 drawWaveform(analyser.current);
             }
         }
