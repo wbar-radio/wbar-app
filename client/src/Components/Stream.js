@@ -1,13 +1,13 @@
 import React from 'react'
 
-function StickyStream() {
+function Stream() {
     return (<>
-            <div>
-                <audio id={"stream"} style={{width: "100%", borderRadius: 0}} controls="controls"
+            <div className={'d-flex w-100 justify-content-center'}>
+                <audio id={"stream"} controls="controls"
                        src="https://audio.wbar.org:8443/stream" title="WBAR RADIO"></audio>
             </div>
         </>
     )
 }
 
-export default StickyStream
+export default Stream

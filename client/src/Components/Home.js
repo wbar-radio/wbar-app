@@ -1,7 +1,7 @@
 
 import React from 'react';
-import Title from './Title';
-import StickyStream from './StickyStream';
+import WBARNavbar from './WBARNavbar';
+import Stream from './Stream';
 import Chat from './Chat';
 import {
   BrowserRouter as Router,
@@ -23,7 +23,7 @@ function Home() {
   return (
     <div className="Home">
       
-      {/* <StickyStream/> */}
+      {/* <Stream/> */}
       {/* <img src={(image)} className="App-logo" alt="logo" /> */}
 
 

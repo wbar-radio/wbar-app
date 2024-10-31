@@ -3,12 +3,13 @@ import {Link} from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import './title.css';
+import './WBARNavbar.css';
+import Stream from './Stream';
 
 // Import the image
 import wbarImage from './wbar-title-v2.png';
 
-const Title = () => {
+const WBARNavbar = () => {
     return (
         <Navbar expand="lg" variant='dark'>
             <Container id={'navbar-container'}>
@@ -33,4 +34,4 @@ const Title = () => {
     );
 }
 
-export default Title;
+export default WBARNavbar;
