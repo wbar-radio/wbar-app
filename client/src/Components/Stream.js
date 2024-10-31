@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 function Stream() {
     const audioRef = useRef(null);
@@ -13,12 +13,11 @@ function Stream() {
 
     useEffect(() => {
         if (audioRef.current) {
-
             if (!ctx.current) {
                 ctx.current = new (window.AudioContext || window.webkitAudioContext)();
                 volumeGainRef.current = ctx.current.createGain();
                 waveformGainRef.current = ctx.current.createGain();
-                waveformGainRef.current.gain.value = 5;
+                waveformGainRef.current.gain.value = 1;
             }
 
             audioRef.current.crossOrigin = "anonymous";
@@ -35,7 +34,7 @@ function Stream() {
             }
 
             if (sourceNode.current && waveformGainRef.current && analyser.current) {
-                sourceNode.current.connect(waveformGainRef.current).connect(analyser.current);
+                sourceNode.current.connect(volumeGainRef.current).connect(analyser.current);
                 drawWaveform(analyser.current);
             }
         }
@@ -47,14 +46,22 @@ function Stream() {
         }
     }, [volume]);
 
-    const handleTogglePlayState = () => {
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.load();
-            audioRef.current.play();
+    const handleTogglePlayState = async () => {
+        if (audioRef.current) {
+            if (ctx.current.state === 'suspended') {
+                await ctx.current.resume();
+            }
+
+            if (isPlaying) {
+                audioRef.current.pause();
+            } else {
+                audioRef.current.load();
+                audioRef.current.play().catch(error => {
+                    console.error("Error playing audio:", error);
+                });
+            }
+            setIsPlaying(!isPlaying);
         }
-        setIsPlaying(!isPlaying);
     };
 
     const handleVolumeChange = (event) => {
