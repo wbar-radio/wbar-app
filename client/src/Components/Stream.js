@@ -1,41 +1,57 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 
 function Stream() {
     const audioRef = useRef(null);
     const canvasRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(.5);
-    const streamOffset = 2;
-    const ctx = useRef(new AudioContext());
-    const gainNode = useRef(ctx.current.createGain());
+    const ctx = useRef(null);
+    const volumeGainRef = useRef(null);
+    const waveformGainRef = useRef(null);
+    const sourceNode = useRef(null);
+    const analyser = useRef(null);
 
     useEffect(() => {
         if (audioRef.current) {
+
+            if (!ctx.current) {
+                ctx.current = new (window.AudioContext || window.webkitAudioContext)();
+                volumeGainRef.current = ctx.current.createGain();
+                waveformGainRef.current = ctx.current.createGain();
+                waveformGainRef.current.gain.value = 5;
+            }
+
             audioRef.current.crossOrigin = "anonymous";
-            const source = ctx.current.createMediaElementSource(audioRef.current);
-            const analyser = ctx.current.createAnalyser();
-            analyser.fftSize = 256;
-            analyser.smoothingTimeConstant = 0.5;
 
-            source.connect(gainNode.current);
-            gainNode.current.connect(analyser);
-            analyser.connect(ctx.current.destination);
+            if (!sourceNode.current) {
+                sourceNode.current = ctx.current.createMediaElementSource(audioRef.current);
+                sourceNode.current.connect(volumeGainRef.current).connect(ctx.current.destination);
+            }
 
-            drawWaveform(analyser);
+            if (!analyser.current) {
+                analyser.current = ctx.current.createAnalyser();
+                analyser.current.fftSize = 256;
+                analyser.current.smoothingTimeConstant = 0.5;
+            }
+
+            if (sourceNode.current && waveformGainRef.current && analyser.current) {
+                sourceNode.current.connect(waveformGainRef.current).connect(analyser.current);
+                drawWaveform(analyser.current);
+            }
         }
-    }, [audioRef, isPlaying]);
+    }, [isPlaying]);
 
     useEffect(() => {
-        gainNode.current.gain.value = volume; // Update gain node volume
+        if (volumeGainRef.current) {
+            volumeGainRef.current.gain.value = volume; // Update gain node volume
+        }
     }, [volume]);
 
     const handleTogglePlayState = () => {
         if (isPlaying) {
             audioRef.current.pause();
         } else {
-            if (isFinite(audioRef.current.duration)) {
-                audioRef.current.currentTime = Math.max(0, audioRef.current.duration - streamOffset);
-            }
+            audioRef.current.load();
             audioRef.current.play();
         }
         setIsPlaying(!isPlaying);
@@ -71,7 +87,6 @@ function Stream() {
             }
 
             analyser.getByteTimeDomainData(dataArray);
-
             let x = 0;
 
             for (let i = 0; i < bufferLength; i++) {
@@ -95,7 +110,7 @@ function Stream() {
             <i className={`bi h4 ${isPlaying ? "bi-stop-fill" : "bi-play-fill"} text-white`}
                onClick={handleTogglePlayState}/>
             <canvas id="waveformCanvas" ref={canvasRef} width="100em" height="40"></canvas>
-            <input type="range" min="0" max="2" step="0.01" value={volume} onChange={handleVolumeChange} />
+            <input type="range" min="0" max="2" step="0.01" value={volume} onChange={handleVolumeChange}/>
         </div>
     );
 }
