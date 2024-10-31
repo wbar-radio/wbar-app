@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
@@ -20,9 +19,9 @@ const WBARNavbar = () => {
                         style={{height: '40px'}} // Adjusted width and display
                     />
                 </Navbar.Brand>
+                <Stream/>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
-
                     <Nav className={'ms-auto'}>
                         <Nav.Link href="/About" className="nav-link">About</Nav.Link>
                         <Nav.Link href="/Events" className="nav-link">Events</Nav.Link>
