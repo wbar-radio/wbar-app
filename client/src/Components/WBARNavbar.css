@@ -1,0 +1,16 @@
+.nav-link {
+  text-decoration: none;
+  color: white !important;
+  font-weight: bold !important;
+  padding: 1em 3em!important;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #555; /* Change the background color on hover */
+}
+
+#navbar-container {
+  display: flex;
+    justify-content: space-between;
+}
