@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-
+import React, {useRef, useState, useEffect} from 'react';
+import './Stream.css'
 function Stream() {
     const audioRef = useRef(null);
     const canvasRef = useRef(null);
@@ -17,7 +17,7 @@ function Stream() {
                 ctx.current = new (window.AudioContext || window.webkitAudioContext)();
                 volumeGainRef.current = ctx.current.createGain();
                 waveformGainRef.current = ctx.current.createGain();
-                waveformGainRef.current.gain.value = 2;
+                waveformGainRef.current.gain.value =3;
             }
 
             audioRef.current.crossOrigin = "anonymous";
@@ -84,7 +84,7 @@ function Stream() {
 
             if (!isPlaying) {
                 // Draw a horizontal line when paused
-                canvasCtx.strokeStyle = 'rgba(155,40,221,0.38)';
+                canvasCtx.strokeStyle = 'rgba(155,40,221,0.71)';
                 canvasCtx.lineWidth = barWidth;
                 canvasCtx.beginPath();
                 canvasCtx.moveTo(0, canvas.height / 2);
@@ -112,14 +112,24 @@ function Stream() {
     }
 
     return (
-        <div className="d-flex w-100 align-content-center justify-content-center">
-            <audio id="stream" ref={audioRef} src="https://audio.wbar.org:8443/stream" title="WBAR RADIO"></audio>
-            <i className={`bi h4 ${isPlaying ? "bi-stop-fill" : "bi-play-fill"} text-white`}
-               onClick={handleTogglePlayState}/>
-            <canvas id="waveformCanvas" ref={canvasRef} width="100em" height="40"></canvas>
-            <input type="range" min="0" max="2" step="0.01" value={volume} onChange={handleVolumeChange}/>
-        </div>
-    );
+        <div className={'d-flex justify-content-center'}>
+            <div id="stream-box">
+                <div className={'d-flex'}>
+                    <audio id="stream" ref={audioRef} src="https://audio.wbar.org:8443/stream"
+                           title="WBAR RADIO"></audio>
+                    <div className={'text-white'}>LIVE</div>
+                    <i className={`bi h3 ${isPlaying ? "bi-stop-circle-fill" : "bi-play-circle-fill"} text-white`}
+                       onClick={handleTogglePlayState}/>
+                    <canvas id="waveform-canvas" ref={canvasRef} width="100em" height="40em"></canvas>
+
+                </div>
+                {/*<div>*/}
+                {/*    <input type="range" min="0" max="2" step="0.01" value={volume} onChange={handleVolumeChange}/>*/}
+                {/*</div>*/}
+            </div>
+
+        </div>)
+        ;
 }
 
 export default Stream;
