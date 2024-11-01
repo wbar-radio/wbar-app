@@ -16,6 +16,7 @@ import Footer from './Components/Footer';
 import About from './Components/About';
 import Events from './Components/Events';
 import DjSched from './Components/DjSched';
+import SparkleCursor from './Components/SparkleCursor';
 
 import {closestCorners, DndContext, useDroppable} from "@dnd-kit/core";
 
@@ -47,6 +48,8 @@ function App() {
 
             </div>
             <Chat/>
+            <SparkleCursor> </SparkleCursor>
+
         </DndContext>
 
     )

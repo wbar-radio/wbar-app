@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "./static/css/main.2f601171.chunk.css",
-    "main.js": "./static/js/main.de379da9.chunk.js",
-    "main.js.map": "./static/js/main.de379da9.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.49601a55.js",
-    "runtime-main.js.map": "./static/js/runtime-main.49601a55.js.map",
+    "main.css": "./static/css/main.af1dafc6.chunk.css",
+    "main.js": "./static/js/main.e3153996.chunk.js",
+    "main.js.map": "./static/js/main.e3153996.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.aaba3b17.js",
+    "runtime-main.js.map": "./static/js/runtime-main.aaba3b17.js.map",
     "static/css/2.57ab81b1.chunk.css": "./static/css/2.57ab81b1.chunk.css",
     "static/js/2.a02b2c6d.chunk.js": "./static/js/2.a02b2c6d.chunk.js",
     "static/js/2.a02b2c6d.chunk.js.map": "./static/js/2.a02b2c6d.chunk.js.map",
-    "static/js/3.c2c9c653.chunk.js": "./static/js/3.c2c9c653.chunk.js",
-    "static/js/3.c2c9c653.chunk.js.map": "./static/js/3.c2c9c653.chunk.js.map",
+    "static/js/3.15020996.chunk.js": "./static/js/3.15020996.chunk.js",
+    "static/js/3.15020996.chunk.js.map": "./static/js/3.15020996.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.0ebc12b5974e4144aecc7e43e41f52bc.js": "./precache-manifest.0ebc12b5974e4144aecc7e43e41f52bc.js",
+    "precache-manifest.225795c6f1092b4ee4867c7a009d8ea3.js": "./precache-manifest.225795c6f1092b4ee4867c7a009d8ea3.js",
     "service-worker.js": "./service-worker.js",
     "static/css/2.57ab81b1.chunk.css.map": "./static/css/2.57ab81b1.chunk.css.map",
-    "static/css/main.2f601171.chunk.css.map": "./static/css/main.2f601171.chunk.css.map",
+    "static/css/main.af1dafc6.chunk.css.map": "./static/css/main.af1dafc6.chunk.css.map",
     "static/js/2.a02b2c6d.chunk.js.LICENSE.txt": "./static/js/2.a02b2c6d.chunk.js.LICENSE.txt",
     "static/media/about.png": "./static/media/about.3ffa391e.png",
     "static/media/bootstrap-icons.css": "./static/media/bootstrap-icons.cc1e5eda.woff2",
@@ -31,10 +31,18 @@
     "static/media/wbbq.png": "./static/media/wbbq.bc528155.png"
   },
   "entrypoints": [
+<<<<<<< HEAD
     "static/js/runtime-main.49601a55.js",
     "static/css/2.57ab81b1.chunk.css",
     "static/js/2.a02b2c6d.chunk.js",
     "static/css/main.2f601171.chunk.css",
     "static/js/main.de379da9.chunk.js"
+=======
+    "static/js/runtime-main.aaba3b17.js",
+    "static/css/2.57ab81b1.chunk.css",
+    "static/js/2.a02b2c6d.chunk.js",
+    "static/css/main.af1dafc6.chunk.css",
+    "static/js/main.e3153996.chunk.js"
+>>>>>>> tajh-branch
   ]
 }
