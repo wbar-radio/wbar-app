@@ -31,18 +31,10 @@
     "static/media/wbbq.png": "./static/media/wbbq.bc528155.png"
   },
   "entrypoints": [
-<<<<<<< HEAD
-    "static/js/runtime-main.49601a55.js",
-    "static/css/2.57ab81b1.chunk.css",
-    "static/js/2.a02b2c6d.chunk.js",
-    "static/css/main.2f601171.chunk.css",
-    "static/js/main.de379da9.chunk.js"
-=======
     "static/js/runtime-main.aaba3b17.js",
     "static/css/2.57ab81b1.chunk.css",
     "static/js/2.a02b2c6d.chunk.js",
     "static/css/main.af1dafc6.chunk.css",
     "static/js/main.e3153996.chunk.js"
->>>>>>> tajh-branch
   ]
 }
