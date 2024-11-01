@@ -10,7 +10,7 @@ import wbarImage from './wbar-title-v2.png';
 
 const WBARNavbar = () => {
     return (
-        <Navbar expand="lg" variant='dark'>
+        <Navbar sticky={"top"} className={"bg-black"} expand="lg" variant='dark'>
             <Container id={'navbar-container'}>
                 <Navbar.Brand href={"/"}>
                     <img
