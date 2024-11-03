@@ -5,7 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="fetch schedule from server.js">
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/logo copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/precache-manifest.0ebc12b5974e4144aecc7e43e41f52bc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/precache-manifest.225795c6f1092b4ee4867c7a009d8ea3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.57ab81b1.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.57ab81b1.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.2f601171.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.2f601171.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.af1dafc6.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.af1dafc6.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.a02b2c6d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.a02b2c6d.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.a02b2c6d.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/3.15020996.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/3.15020996.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/3.c2c9c653.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/3.c2c9c653.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.de379da9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.de379da9.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.e3153996.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.e3153996.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.49601a55.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.49601a55.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.aaba3b17.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.aaba3b17.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/about.3ffa391e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/bootstrap-icons.ba49e844.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/bootstrap-icons.cc1e5eda.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/bootstrap.min.css.f12f498b.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/streaming.05705b54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar join '23 Flyer (1).a1b62358.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-12.02.54bc4898.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-2.17.6babd13a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-april-29.b31b9fc9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-dj-sched.97fb817f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-title-v2.5364aacb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar.f76bbfd8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar_apps_due.9415efdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbbq.bc528155.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +95,7 @@
   "keyToString": {
     "Node.js.server.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "remove-build",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ava/github/wbar-app",
     "node.js.detected.package.eslint": "true",
