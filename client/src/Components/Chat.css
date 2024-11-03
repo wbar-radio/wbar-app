@@ -3,8 +3,6 @@
     bottom: 10px;
     right: 10px;
     z-index: 1000;
-    color: var(--wbar-purple);
-    background-color: var(--wbar-purple);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -15,11 +13,8 @@
 #show-chat-btn span, #show-chat-btn i {
     color: white;
     font-size: large;
+}
 
-}
-#show-chat-btn span {
-    font-weight: bold;
-}
 #chat-container {
     display: flex;
     flex-direction: column;
@@ -68,9 +63,6 @@
 #user-info-row {
     display: flex;
     justify-content: space-between;
-}
-#show-chat-btn {
-    color: var(--wbar-purple);
 }
 
 @media (max-width: 768px) {
