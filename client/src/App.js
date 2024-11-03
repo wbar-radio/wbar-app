@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Title from './Components/Title';
-import StickyStream from './Components/StickyStream';
+import WBARNavbar from './Components/WBARNavbar';
 import Chat from './Components/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css.map';
@@ -29,8 +28,8 @@ function App() {
         <DndContext>
             <div className="App">
                 <Router>
-                    <Title/>
-                    <StickyStream/>
+                    <WBARNavbar/>
+                    {/*<Stream/>*/}
                     <div ref={setNodeRef}>
                         <Routes>
                             <Route path="/About" element={<About/>} exact/>
