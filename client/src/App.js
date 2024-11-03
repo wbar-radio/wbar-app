@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Title from './Components/Title';
-import StickyStream from './Components/StickyStream';
+import WBARNavbar from './Components/WBARNavbar';
 import Chat from './Components/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css.map';
@@ -16,6 +15,7 @@ import Footer from './Components/Footer';
 import About from './Components/About';
 import Events from './Components/Events';
 import DjSched from './Components/DjSched';
+import SparkleCursor from './Components/SparkleCursor';
 
 import {closestCorners, DndContext, useDroppable} from "@dnd-kit/core";
 
@@ -28,13 +28,11 @@ function App() {
         <DndContext>
             <div className="App">
                 <Router>
-                    <Title/>
-                    <StickyStream/>
-                    <div ref={setNodeRef}>
+                    <WBARNavbar/>
+                    <div ref={setNodeRef} className="container">
                         <Routes>
                             <Route path="/About" element={<About/>} exact/>
                             <Route path="/Events" element={<Events/>} exact/>
-                            {/* <Route path="/DjSched" element={<DjSched />} exact /> */}
                             <Route path="/" element={<DjSched/>} exact/>
                         </Routes>
                     </div>
@@ -47,6 +45,8 @@ function App() {
 
             </div>
             <Chat/>
+            <SparkleCursor> </SparkleCursor>
+
         </DndContext>
 
     )

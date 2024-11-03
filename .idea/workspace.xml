@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="remove console log and move btn to right">
-      <change afterPath="$PROJECT_DIR$/client/src/Components/WaveformVisualizer.js" afterDir="false" />
+    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="fetch schedule from server.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/StickyStream.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/StickyStream.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/DjSched.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/DjSched.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/SparkleCursor.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SparkleCursor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Stream.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Waveform.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Waveform.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,14 +20,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -49,26 +50,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.connect.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.server.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ava-branch&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ava/github/wbar-app&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/ava/Applications/IntelliJ IDEA Ultimate.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.server.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ava/github/wbar-app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/ava/Applications/IntelliJ IDEA Ultimate.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client" />
@@ -106,11 +105,15 @@
       <workItem from="1729109759512" duration="12000" />
       <workItem from="1729174883494" duration="18000" />
       <workItem from="1729445156251" duration="3806000" />
-      <workItem from="1729653552181" duration="865000" />
-      <workItem from="1729689957270" duration="10695000" />
-      <workItem from="1729705954670" duration="76000" />
-      <workItem from="1729706465826" duration="17694000" />
-      <workItem from="1730055916979" duration="120000" />
+      <workItem from="1730337155007" duration="1552000" />
+      <workItem from="1730349729297" duration="6481000" />
+      <workItem from="1730394362064" duration="14000" />
+      <workItem from="1730401997924" duration="1193000" />
+      <workItem from="1730406068477" duration="8971000" />
+      <workItem from="1730478158565" duration="7892000" />
+      <workItem from="1730563604665" duration="131000" />
+      <workItem from="1730569263772" duration="3341000" />
+      <workItem from="1730657657214" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="fetch schedule from server.js">
       <option name="closed" value="true" />
@@ -120,95 +123,7 @@
       <option name="project" value="LOCAL" />
       <updated>1728842443675</updated>
     </task>
-    <task id="LOCAL-00002" summary="compartmentalize api call">
-      <option name="closed" value="true" />
-      <created>1729694063387</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1729694063387</updated>
-    </task>
-    <task id="LOCAL-00003" summary="start connect to db">
-      <option name="closed" value="true" />
-      <created>1729694177606</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1729694177606</updated>
-    </task>
-    <task id="LOCAL-00004" summary="chat btn moved to chat window and working">
-      <option name="closed" value="true" />
-      <created>1729695731020</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1729695731020</updated>
-    </task>
-    <task id="LOCAL-00005" summary="close chat on right">
-      <option name="closed" value="true" />
-      <created>1729698400546</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1729698400546</updated>
-    </task>
-    <task id="LOCAL-00006" summary="show chat floats on bottom left">
-      <option name="closed" value="true" />
-      <created>1729698839724</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1729698839724</updated>
-    </task>
-    <task id="LOCAL-00007" summary="hide chat on esc">
-      <option name="closed" value="true" />
-      <created>1729699162237</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1729699162237</updated>
-    </task>
-    <task id="LOCAL-00008" summary="hide chat on esc">
-      <option name="closed" value="true" />
-      <created>1729699177715</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1729699177715</updated>
-    </task>
-    <task id="LOCAL-00009" summary="hide chat on esc">
-      <option name="closed" value="true" />
-      <created>1729699852928</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1729699852928</updated>
-    </task>
-    <task id="LOCAL-00010" summary="change btn color">
-      <option name="closed" value="true" />
-      <created>1729700534798</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1729700534799</updated>
-    </task>
-    <task id="LOCAL-00011" summary="remove console log and move btn to right">
-      <option name="closed" value="true" />
-      <created>1729713879518</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1729713879518</updated>
-    </task>
-    <task id="LOCAL-00012" summary="remove console log and move btn to right">
-      <option name="closed" value="true" />
-      <created>1729713887887</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1729713887887</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,17 +141,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="move stream to navbar" />
     <MESSAGE value="fetch schedule from server.js" />
-    <MESSAGE value="compartmentalize api call" />
-    <MESSAGE value="start connect to db" />
-    <MESSAGE value="chat btn moved to chat window and working" />
-    <MESSAGE value="close chat on right" />
-    <MESSAGE value="show chat floats on bottom left" />
-    <MESSAGE value="fix fetch problem" />
-    <MESSAGE value="hide chat on esc" />
-    <MESSAGE value="change btn color" />
-    <MESSAGE value="remove console log and move btn to right" />
-    <MESSAGE value="add support for mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="add support for mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fetch schedule from server.js" />
   </component>
 </project>

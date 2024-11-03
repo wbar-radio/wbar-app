@@ -1,0 +1,12 @@
+
+#stream-box i {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0.5em;
+}
+
+.d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -16,5 +16,8 @@
     "mysql": "^2.18.1",
     "nodemon": "^3.1.7",
     "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "webpack": "^5.95.0"
   }
 }
