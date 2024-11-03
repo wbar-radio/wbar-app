@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="fetch schedule from server.js">
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Waveform.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/WBARNavbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/WBARNavbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/WBARNavbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/WBARNavbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Stream.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +109,10 @@
       <workItem from="1730394362064" duration="14000" />
       <workItem from="1730401997924" duration="1193000" />
       <workItem from="1730406068477" duration="8971000" />
-      <workItem from="1730478158565" duration="2971000" />
+      <workItem from="1730478158565" duration="7892000" />
+      <workItem from="1730563604665" duration="131000" />
+      <workItem from="1730569263772" duration="3341000" />
+      <workItem from="1730657657214" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="fetch schedule from server.js">
       <option name="closed" value="true" />
