@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import './Stream.css';
 import Waveform from './Waveform';
 
@@ -12,9 +12,6 @@ function Stream() {
     const waveformGainRef = useRef(null);
     const sourceNode = useRef(null);
     const analyser = useRef(null);
-
-    const minDesiredAmplitude = 0.15;
-    const maxDesiredAmplitude = 0.4;
 
     useEffect(() => {
         if (audioRef.current) {
@@ -84,10 +81,6 @@ function Stream() {
                     <Waveform
                         isPlaying={isPlaying}
                         analyser={analyser.current}
-                        minDesiredAmplitude={minDesiredAmplitude}
-                        maxDesiredAmplitude={maxDesiredAmplitude}
-                        setAverageAmplitude={setAverageAmplitude}
-                        gainNode={waveformGainRef.current}
                     />
                 </div>
             </div>

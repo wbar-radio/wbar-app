@@ -29,12 +29,10 @@ function App() {
             <div className="App">
                 <Router>
                     <WBARNavbar/>
-                    {/*<Stream/>*/}
-                    <div ref={setNodeRef} className="scrollable-container">
+                    <div ref={setNodeRef} className="container">
                         <Routes>
                             <Route path="/About" element={<About/>} exact/>
                             <Route path="/Events" element={<Events/>} exact/>
-                            {/* <Route path="/DjSched" element={<DjSched />} exact /> */}
                             <Route path="/" element={<DjSched/>} exact/>
                         </Routes>
                     </div>

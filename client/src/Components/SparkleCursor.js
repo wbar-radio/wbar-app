@@ -33,7 +33,7 @@ const SparkleCursor = () => {
   }, []);
 
   return (
-    <>
+    <div className={"sparkle-effect"}>
       {sparkles.map((sparkle) => (
         <div
           key={sparkle.id}
@@ -41,7 +41,7 @@ const SparkleCursor = () => {
           style={{ left: sparkle.left, top: sparkle.top }}
         />
       ))}
-    </>
+    </div>
   );
 };
 

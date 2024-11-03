@@ -150,7 +150,7 @@ const schedule = {
     }, []);
   
     return (
-      <div className="container">
+      <div>
         <h1 className="text-center mt-5">DJ Schedule</h1>
         <div className="current-show">
         <h2>Currently Playing:</h2>
