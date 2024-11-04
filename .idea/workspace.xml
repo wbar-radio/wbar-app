@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="fetch schedule from server.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/DjSched.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/DjSched.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/SparkleCursor.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/SparkleCursor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Stream.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Waveform.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Waveform.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
   "keyToString": {
     "Node.js.server.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "ava-branch",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ava/github/wbar-app",
     "node.js.detected.package.eslint": "true",
