@@ -69,10 +69,10 @@ function Chat() {
     };
 
     const handleMouseMoveY = (e) => {
-        const deltaY = (sResizeRef.current.getBoundingClientRect().bottom - e.clientY) * 0.5;
-        const newHeight = initialSize.current.height + deltaY;
-        setSize(prevSize => ({ ...prevSize, height: newHeight }));
-    };
+    const deltaY = (sResizeRef.current.getBoundingClientRect().bottom - e.clientY) * 0.5;
+    const newHeight = initialSize.current.height - deltaY;
+    setSize(prevSize => ({ ...prevSize, height: newHeight }));
+};
 
     const handleMouseUpY = () => {
         window.removeEventListener('mousemove', handleMouseMoveY);
@@ -110,6 +110,7 @@ function Chat() {
                         setFinalOffset({ x: 0, y: 0 });
                         setIsMinimized(false);
                         setIsVisible(false);
+                        setSize({ width: 400, height: 600 });
                     }}
                     title={'Close chat'}
                 ></i>

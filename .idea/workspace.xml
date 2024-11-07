@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="fetch schedule from server.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +110,7 @@
       <workItem from="1730563604665" duration="131000" />
       <workItem from="1730569263772" duration="3341000" />
       <workItem from="1730657657214" duration="773000" />
-      <workItem from="1730943154914" duration="4958000" />
+      <workItem from="1730943154914" duration="5624000" />
     </task>
     <task id="LOCAL-00001" summary="fetch schedule from server.js">
       <option name="closed" value="true" />
