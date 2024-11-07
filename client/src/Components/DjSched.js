@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-
 import './DJSched.css'
 const image = require("./wbar-dj-sched.jpg")
 const schedule = {
@@ -96,9 +95,7 @@ const schedule = {
     '10PM-12AM': 'str4wb3rry c0mput3r'
   }
 };
-
   
-
   function ShowWithTime({ time, show }) {
     return (
       <div className="show">
@@ -109,28 +106,77 @@ const schedule = {
   }
   
   function DJSched() {
-    const [activeDay, setActiveDay] = useState(null);
+    /*const [activeDay, setActiveDay] = useState(null);
   
-    const toggleDay = (day) => {
+    /*const toggleDay = (day) => {
       setActiveDay(activeDay === day ? null : day);
-    };
+    };*/
+
+    const [currentShow, setCurrentShow] = useState(null);
+    const [currentTimeSlot, setCurrentTimeSlot] = useState('');
+    const [currentDay, setCurrentDay] = useState('');
+
+    useEffect(() => {
+      const updateCurrentShow = () => {
+        const now = new Date();
+        const day = now.toLocaleString('en-US', { weekday: 'long' });
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const time = `${(hours % 12) || 12}${minutes >= 30 ? 'PM' : 'AM'}`; // Formatting time
+  
+        let timeSlot = '';
+        if (hours >= 0 && hours < 2) timeSlot = '12AM-2AM';
+        else if (hours >= 2 && hours < 4) timeSlot = '2AM-4AM';
+        else if (hours >= 4 && hours < 6) timeSlot = '4AM-6AM';
+        else if (hours >= 6 && hours < 8) timeSlot = '6AM-8AM';
+        else if (hours >= 8 && hours < 10) timeSlot = '8AM-10AM';
+        else if (hours >= 10 && hours < 12) timeSlot = '10AM-12PM';
+        else if (hours >= 12 && hours < 14) timeSlot = '12PM-2PM';
+        else if (hours >= 14 && hours < 16) timeSlot = '2PM-4PM';
+        else if (hours >= 16 && hours < 18) timeSlot = '4PM-6PM';
+        else if (hours >= 18 && hours < 20) timeSlot = '6PM-8PM';
+        else if (hours >= 20 && hours < 22) timeSlot = '8PM-10PM';
+        else timeSlot = '10PM-12AM';
+  
+        const show = schedule[day] && schedule[day][timeSlot];
+        setCurrentShow(show);
+        setCurrentTimeSlot(timeSlot);
+        setCurrentDay(day); // Set the current day
+      };
+  
+      updateCurrentShow();
+      const intervalId = setInterval(updateCurrentShow, 60000); // Update every minute
+      return () => clearInterval(intervalId); // Cleanup on unmount
+    }, []);
   
     return (
       <div className="container">
         <h1 className="text-center mt-5">DJ Schedule</h1>
+        <div className="current-show">
+        <h2>Currently Playing:</h2>
+        <div>{currentDay ? <h3>{currentDay}</h3> : null}</div> {/* Display the current day */}
+          {currentShow ? (
+            <div className="show">
+              <div className="show-name">{currentShow}</div>
+              <div className="time">{currentTimeSlot}</div>
+            </div>
+          ) : (
+            <p>No show currently playing</p>
+          )}
+        </div>
         <div className="row justify-content-center">
           {Object.keys(schedule).map((day) => (
             <div key={day} className="col-lg-3 col-md-4 col-sm-6 mb-4">
-              <div className={`day ${activeDay === day && 'active'}`} onClick={() => toggleDay(day)}>
+              {/* <div className={`day ${activeDay === day && 'active'}`} onClick={() => toggleDay(day)}> */}
                 <div className="day-name">{day}</div>
-                {activeDay === day && (
+                {/* {activeDay === day && ( */}
                   <div className="schedule">
                     {Object.entries(schedule[day]).map(([time, show]) => (
                       <ShowWithTime key={time} time={time} show={show} />
                     ))}
                   </div>
-                )}
-              </div>
+                {/* )} */}
+              {/* </div> */}
             </div>
           ))}
         </div>

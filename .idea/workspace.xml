@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="fetch schedule from server.js">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/logo copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/precache-manifest.0ebc12b5974e4144aecc7e43e41f52bc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/precache-manifest.225795c6f1092b4ee4867c7a009d8ea3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.57ab81b1.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.57ab81b1.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.2f601171.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.2f601171.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.af1dafc6.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/main.af1dafc6.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.a02b2c6d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.a02b2c6d.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.a02b2c6d.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/3.15020996.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/3.15020996.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/3.c2c9c653.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/3.c2c9c653.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.de379da9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.de379da9.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.e3153996.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.e3153996.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.49601a55.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.49601a55.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.aaba3b17.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime-main.aaba3b17.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/about.3ffa391e.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/bootstrap-icons.ba49e844.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/bootstrap-icons.cc1e5eda.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/bootstrap.min.css.f12f498b.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/streaming.05705b54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar join '23 Flyer (1).a1b62358.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-12.02.54bc4898.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-2.17.6babd13a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-april-29.b31b9fc9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-dj-sched.97fb817f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar-title-v2.5364aacb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar.f76bbfd8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbar_apps_due.9415efdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/wbbq.bc528155.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;avahajr&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/wbar-radio/wbar-app.git&quot;,
+    &quot;accountId&quot;: &quot;31d67de4-85aa-47fa-8aba-b6c6c874f4a6&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2mR3X6NVwp4MdLyV7njgEoq9cC3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.server.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "remove-build",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ava/github/wbar-app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/ava/Applications/IntelliJ IDEA Ultimate.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29138861-71ec-484c-b44b-c80c5ddaafa1" name="Changes" comment="" />
+      <created>1727025598826</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727025598826</updated>
+      <workItem from="1727025599882" duration="1863000" />
+      <workItem from="1727630924061" duration="6244000" />
+      <workItem from="1727792818090" duration="6407000" />
+      <workItem from="1727825107191" duration="122000" />
+      <workItem from="1728247019020" duration="10468000" />
+      <workItem from="1728311671694" duration="1205000" />
+      <workItem from="1728312988729" duration="1242000" />
+      <workItem from="1728585942381" duration="512000" />
+      <workItem from="1728586465191" duration="2656000" />
+      <workItem from="1728841507559" duration="277000" />
+      <workItem from="1728841792792" duration="67000" />
+      <workItem from="1728841861241" duration="4208000" />
+      <workItem from="1729006503484" duration="7248000" />
+      <workItem from="1729109759512" duration="12000" />
+      <workItem from="1729174883494" duration="18000" />
+      <workItem from="1729445156251" duration="3806000" />
+      <workItem from="1730337155007" duration="1552000" />
+      <workItem from="1730349729297" duration="6481000" />
+      <workItem from="1730394362064" duration="14000" />
+      <workItem from="1730401997924" duration="1193000" />
+      <workItem from="1730406068477" duration="8971000" />
+      <workItem from="1730478158565" duration="7892000" />
+      <workItem from="1730563604665" duration="131000" />
+      <workItem from="1730569263772" duration="3341000" />
+      <workItem from="1730657657214" duration="773000" />
+    </task>
+    <task id="LOCAL-00001" summary="fetch schedule from server.js">
+      <option name="closed" value="true" />
+      <created>1728842443674</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728842443675</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="move stream to navbar" />
+    <MESSAGE value="fetch schedule from server.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="fetch schedule from server.js" />
+  </component>
+</project>
