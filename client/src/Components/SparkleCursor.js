@@ -10,10 +10,13 @@ const SparkleCursor = () => {
       const x = e.touches ? e.touches[0].clientX : e.clientX;
       const y = e.touches ? e.touches[0].clientY : e.clientY;
 
+      const scrollX = window.scrollX || window.pageXOffset;
+      const scrollY = window.scrollY || window.pageYOffset;
+
       const sparkle = {
         id: Date.now(),
-        left: x,
-        top: y,
+        left: x + scrollX,
+        top: y + scrollY,
       };
       setSparkles((prev) => [...prev, sparkle]);
 
@@ -33,7 +36,7 @@ const SparkleCursor = () => {
   }, []);
 
   return (
-    <>
+    <div id="sparkle-effect">
       {sparkles.map((sparkle) => (
         <div
           key={sparkle.id}
@@ -41,7 +44,7 @@ const SparkleCursor = () => {
           style={{ left: sparkle.left, top: sparkle.top }}
         />
       ))}
-    </>
+    </div>
   );
 };
 

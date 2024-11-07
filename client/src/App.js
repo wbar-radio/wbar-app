@@ -5,8 +5,6 @@ import Chat from './Components/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './Components/Home';
-import Footer from './Components/Footer';
 import About from './Components/About';
 import Events from './Components/Events';
 import DjSched from './Components/DjSched';
@@ -31,9 +29,9 @@ function App() {
                         </Routes>
                     </div>
                 </Router>
-                <Chat />
-                <SparkleCursor />
             </div>
+            <Chat />
+            <SparkleCursor />
         </DndContext>
     );
 }
