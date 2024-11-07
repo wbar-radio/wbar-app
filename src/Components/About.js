@@ -1,9 +1,38 @@
-import React, { } from 'react';
+import React, { useEffect, useRef } from 'react';
+import Hydra from 'hydra-synth';
 import './about.css';
 
 function About() {
+  const hydraRef = useRef(null);
+
+  useEffect(() => {
+    const h = new Hydra({
+      canvas: hydraRef.current,
+      makeGlobal: false,
+      detectAudio: false
+    });
+
+    const synth = h.synth;
+
+    synth.osc(13, 0, 1)
+      .kaleid(() => 4)
+      .mask(synth.shape(4, 0.3, 1))
+      .modulateRotate(synth.shape(4, 0.1, 1))
+      .scale(0.3)
+      .add(synth.shape(4, 0.2, 1).color(0.3, 1, 1, 0.5))
+      .modulate(
+        synth.osc(6, 0, 1.5).brightness(-0.5).modulate(synth.noise(3).sub(synth.gradient()), 1),
+        0.5
+      )
+      .rotate(0, 1)
+      .scale(1, window.innerHeight / window.innerWidth)
+      .out();
+  }, []);
+
   return (
     <div className="about-container">
+      <canvas ref={hydraRef} className="hydra-background" />
+
       <section className="section">
         <h2>Who Are We?</h2>
         <p>WBAR is the college radio station of Barnard College in New York City. WBAR was developed in the early 1990s as a freeform alternative to WKCR-FM on the Columbia University campus. Since then, WBAR has provided community and a form of expression for music and podcast loving Barnard College and Columbia University students seeking a place to play the music that impassions them. Every semester, our board members hand pick the semester schedule with a mix of recurring and brand new DJs to continuously diversify our schedule. From Southern hip hop to Russian techno, there is no limit to how the nearly 100 DJs fill their weekly 2 hour time slots.</p>
@@ -14,27 +43,21 @@ function About() {
         <h2>Meet the WBAR Staff</h2>
         <p></p>
         <div className="grid-container">
-          <div className="grid-item">
-          
-          </div>
-          <div className="grid-item">
-          
-          </div>
-          <div className="grid-item">
-          
-          </div>
-          <div className="grid-item">
-          
-          </div>
+          <div className="grid-item">Staff Member 1</div>
+          <div className="grid-item">Staff Member 2</div>
+          <div className="grid-item">Staff Member 3</div>
+          <div className="grid-item">Staff Member 4</div>
+          <div className="grid-item">Staff Member 5</div>
+          <div className="grid-item">Staff Member 6</div>
+          <div className="grid-item">Staff Member 7</div>
+          <div className="grid-item">Staff Member 8</div>
         </div>
       </section>
 
       <section className="section">
         <h2>Socials</h2>
         <ul className="social-links">
-          <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-          <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-          <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://www.instagram.com/wbar_radio/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
       </section>
     </div>

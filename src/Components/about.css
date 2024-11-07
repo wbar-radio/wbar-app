@@ -1,44 +1,62 @@
+/* Style the Hydra canvas for background visuals */
+.hydra-background {
+  position: fixed; /* Keeps the canvas in a fixed position relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  z-index: 0; /* Places the canvas behind all content */
+  pointer-events: none; /* Disables interaction with the canvas */
+}
+
+/* Main container holding the content */
 .about-container {
-  width: 100%;
-  /* margin-left: 200px;
-  margin-right: 200px; */
-  margin: 0 auto;
-  background-color: black;
+  position: relative;
+  z-index: 1; /* Ensures content is on top of the background */
+  padding: 20px;
+}
+
+/* General section styling */
+.section {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background to make text stand out */
+  color: white;
+  margin: 60px 0;
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
-  color: white
+  position: relative;
+  z-index: 2; /* Higher z-index to ensure it's above the hydra background */
 }
 
-.section{
-  margin: 60px 0;
-}
-
+/* Headings styling */
 .section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
   text-align: center;
-  font-weight: bold; /* This makes the header bold */
-  margin-bottom: 20px; /* Adds space below the header */
 }
 
-.section p {
-  margin-bottom: 20px; /* Adds space below the paragraph */
-}
-
-.grid-container{
+/* Grid for staff section */
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 boxes per row */
   gap: 20px;
   justify-content: center;
 }
 
-.grid-item{
-  width: 100px;
-  height: 100px;
+.grid-item {
   background-color: #d3d3d3;
   border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Social links */
+/* Social links styling */
 .social-links {
   list-style-type: none;
   padding: 0;
@@ -58,16 +76,3 @@
 .social-links a:hover {
   text-decoration: underline;
 }
-
-/* .width {
-  margin-left: 200px;
-  margin-right: 200px;
-}
-
-body, html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: black;
-} */
