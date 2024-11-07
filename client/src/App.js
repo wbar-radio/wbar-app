@@ -3,6 +3,7 @@ import './App.css';
 import WBARNavbar from './Components/WBARNavbar';
 import Chat from './Components/Chat';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css.map';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from './Components/About';
@@ -15,7 +16,6 @@ function App() {
     const { setNodeRef } = useDroppable({
         id: 'everything-but-navbar',
     });
-
     return (
         <DndContext>
             <div className="App">
