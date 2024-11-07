@@ -8,7 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Chat.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +53,7 @@
   "keyToString": {
     "Node.js.server.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ava-branch",
+    "git-widget-placeholder": "resize-chat",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/ava/github/wbar-app",
     "node.js.detected.package.eslint": "true",
@@ -112,6 +113,7 @@
       <workItem from="1730563604665" duration="131000" />
       <workItem from="1730569263772" duration="3341000" />
       <workItem from="1730657657214" duration="773000" />
+      <workItem from="1730943154914" duration="4958000" />
     </task>
     <task id="LOCAL-00001" summary="fetch schedule from server.js">
       <option name="closed" value="true" />
