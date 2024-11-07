@@ -4,15 +4,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import './WBARNavbar.css';
 import Stream from './Stream';
+import { Link } from 'react-router-dom';
 
-// Import the image
 import wbarImage from './wbar-title-v2.png';
 
 const WBARNavbar = () => {
     return (
         <Navbar sticky={"top"} className={"bg-black"} expand="lg" variant='dark'>
             <Container id={'navbar-container'}>
-                <Navbar.Brand href={"/"}>
+                <Navbar.Brand as={Link} to="/">
                     <img
                         src={wbarImage}
                         alt="WBAR"
@@ -23,10 +23,9 @@ const WBARNavbar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className={'ms-auto'}>
-                        <Nav.Link href="/About" className="nav-link">About</Nav.Link>
-                        <Nav.Link href="/Events" className="nav-link">Events</Nav.Link>
+                        <Nav.Link as={Link} to="/about">About</Nav.Link>
+                        <Nav.Link as={Link} to="/events">Events</Nav.Link>
                     </Nav>
-
                 </Navbar.Collapse>
             </Container>
         </Navbar>
