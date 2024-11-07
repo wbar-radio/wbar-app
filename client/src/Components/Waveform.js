@@ -11,7 +11,7 @@ function Waveform({ isPlaying, analyser }) {
         };
 
         window.addEventListener('resize', handleResize);
-        handleResize();
+        handleResize(); // Set initial width
 
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -52,6 +52,7 @@ function Waveform({ isPlaying, analyser }) {
 
             analyser.getByteTimeDomainData(dataArray);
             let x = 0;
+            let sum = 0;
 
             for (let i = 0; i < bufferLength; i++) {
                 const v = dataArray[i] / 128.0;
@@ -62,8 +63,8 @@ function Waveform({ isPlaying, analyser }) {
                 canvasCtx.fillRect(x, canvas.height / 2 - barHeight / 2, barWidth, barHeight);
 
                 x += barWidth + 1;
+                sum += Math.abs(v - 1); // Calculate the amplitude
             }
-
         }
 
         draw();

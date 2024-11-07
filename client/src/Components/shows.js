@@ -127,23 +127,17 @@ function Shows() {
                     console.log('Start hour:', startHour);
                     console.log('end hour:', endHour);
 
-
-                    // console.log('Start Time:', startTime);
-                    // console.log('End Time:', endTime);
-
                     if (currentTime >= startTime && currentTime < endTime) {
                         // Use functional update to ensure the most up-to-date state value
                         setCurrentShow(prevShow => schedule[dayOfWeek][timeSlot]);
                         showFound = true;
                         break;
-                    } else if (endTime == 0) {
+                    } else if (endTime === 0) {
                         endTime = 2400
                         console.log("time slot", timeSlot)
 
                         setCurrentShow(prevShow => schedule[dayOfWeek][timeSlot]);
                         showFound = true;
-
-
                     }
                 }
             }
