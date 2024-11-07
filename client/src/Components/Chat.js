@@ -24,6 +24,29 @@ function Chat() {
         }
     }, [transform, isMinimized]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            const chatContainer = document.getElementById('chat-container');
+            if (chatContainer) {
+                const { width, height } = chatContainer.getBoundingClientRect();
+                const maxX = window.innerWidth - width;
+                const maxY = window.innerHeight - height;
+
+                setFinalOffset(prev => ({
+                    x: Math.min(Math.max(prev.x, 0), maxX),
+                    y: Math.min(Math.max(prev.y, 0), maxY),
+                }));
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Set initial position
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const handleDragEnd = () => {
         setFinalOffset(prev => ({
             x: prev.x + deltaOffset.x, y: prev.y + deltaOffset.y,
@@ -52,7 +75,7 @@ function Chat() {
 
     const handleMouseMoveX = (e) => {
         const deltaX = (wResizeRef.current.getBoundingClientRect().right - e.clientX) * 0.5;
-        const newWidth = initialSize.current.width + deltaX;
+        const newWidth = Math.max(350, initialSize.current.width + deltaX);
         setSize(prevSize => ({ ...prevSize, width: newWidth }));
     };
 
@@ -69,10 +92,10 @@ function Chat() {
     };
 
     const handleMouseMoveY = (e) => {
-    const deltaY = (sResizeRef.current.getBoundingClientRect().bottom - e.clientY) * 0.5;
-    const newHeight = initialSize.current.height - deltaY;
-    setSize(prevSize => ({ ...prevSize, height: newHeight }));
-};
+        const deltaY = (sResizeRef.current.getBoundingClientRect().bottom - e.clientY) * 0.5;
+        const newHeight = Math.max(300, initialSize.current.height - deltaY);
+        setSize(prevSize => ({ ...prevSize, height: newHeight }));
+    };
 
     const handleMouseUpY = () => {
         window.removeEventListener('mousemove', handleMouseMoveY);
@@ -140,7 +163,7 @@ function Chat() {
                         top: '0'
                     }}
                 >
-                    <i className="bi bi-three-dots-vertical"></i>
+                    <i className="bi bi-three-dots-vertical h5"></i>
                 </div>
                 <iframe
                     title='chat'
@@ -164,7 +187,7 @@ function Chat() {
                     left: '0'
                 }}
             >
-                <i className="bi bi-three-dots"></i>
+                <i className="bi bi-three-dots h5"></i>
             </div>
             <a href='https://minnit.chat/c/WBAR' target={'_blank'} rel={'noreferrer'} style={{ marginTop: '10px' }}>
                 Open in new tab
