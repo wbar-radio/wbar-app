@@ -65,7 +65,14 @@ html, body, .App {
 }
 
 #link-to-form {
-  position: relative;
+  color: var(--bs-white);
+  position: fixed;
+  font-size: 3em;
+  left: 25px;
+  bottom:0;
   z-index: 1000;
   cursor: pointer;
+}
+#link-to-form:hover {
+    color: #e0cde8 !important;
 }

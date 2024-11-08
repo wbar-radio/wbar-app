@@ -9,7 +9,7 @@ export default function FeedbackForm() {
     }, []);
 
     return (
-        <div>
+        <div className={"text-center"}>
             {loading && (
                 <div className="spinner-border text-light" style={{width: '6rem', height: '6rem'}} role="status">
                     <span className="visually-hidden">Loading...</span>
