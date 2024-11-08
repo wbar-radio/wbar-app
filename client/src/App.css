@@ -2,7 +2,6 @@
 .App {
   background-color: black;
   font-family: "Newsreader", serif;
-  text-align: center;
 }
 #App {
   background-color: black;
@@ -63,4 +62,10 @@ html, body, .App {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+#link-to-form {
+  position: relative;
+  z-index: 1000;
+  cursor: pointer;
 }
