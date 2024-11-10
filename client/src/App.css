@@ -2,7 +2,6 @@
 .App {
   background-color: black;
   font-family: "Newsreader", serif;
-  text-align: center;
 }
 #App {
   background-color: black;
@@ -63,4 +62,17 @@ html, body, .App {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+#link-to-form {
+  color: var(--bs-white);
+  position: fixed;
+  font-size: 3em;
+  left: 25px;
+  bottom:0;
+  z-index: 1000;
+  cursor: pointer;
+}
+#link-to-form:hover {
+    color: #e0cde8 !important;
 }

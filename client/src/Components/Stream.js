@@ -6,7 +6,6 @@ function Stream() {
     const audioRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(.5);
-    const [averageAmplitude, setAverageAmplitude] = useState(0);
     const ctx = useRef(null);
     const volumeGainRef = useRef(null);
     const waveformGainRef = useRef(null);
@@ -63,10 +62,6 @@ function Stream() {
             }
             setIsPlaying(!isPlaying);
         }
-    };
-
-    const handleVolumeChange = (event) => {
-        setVolume(event.target.value);
     };
 
     return (
