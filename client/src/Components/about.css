@@ -1,19 +1,102 @@
-.About {
-  width: 100%;
-  height: 100vh; /* 100% of viewport height */
-  /* margin-left: 200px;
-  margin-right: 200px; */
+/* Style the Hydra canvas for background visuals */
+.hydra-background {
+  position: fixed; /* Keeps the canvas in a fixed position relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  z-index: 0; /* Places the canvas behind all content */
+  pointer-events: none; /* Disables interaction with the canvas */
 }
 
-.width {
-  margin-left: 200px;
-  margin-right: 200px;
+/* Main container holding the content */
+.about-container {
+  position: relative;
+  z-index: 1; /* Ensures content is on top of the background */
+  padding: 20px;
 }
 
-body, html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
+/* General section styling */
+.section {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background to make text stand out */
+  color: white;
+  margin: 60px 0;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2; /* Higher z-index to ensure it's above the hydra background */
+}
+
+/* Headings styling */
+.section h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Grid for staff section */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Styling for staff members */
+.staff-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+/* Staff image */
+.staff-image {
+  width: 100px;  /* Adjust width */
+  height: 100px; /* Adjust height to fit */
+  object-fit: cover; /* Ensures the image fills the box while maintaining aspect ratio */
+  border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+/* Staff name */
+.staff-name {
+  margin-top: 10px; /* Space between image and name */
+  font-weight: bold; /* Make the name bold */
+  text-align: center; /* Center the name text */
+}
+
+/* Social links styling */
+.social-links {
+  list-style-type: none;
   padding: 0;
-  background-color: black;
+  text-align: center;
 }
+
+.social-links li {
+  margin: 10px 0;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for tablet screens */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column for mobile */
+  }
+}
+
