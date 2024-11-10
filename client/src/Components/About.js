@@ -19,7 +19,7 @@ function About() {
       .mask(synth.shape(4, 0.3, 1))
       .modulateRotate(synth.shape(4, 0.1, 1))
       .scale(0.3)
-      .add(synth.shape(4, 0.2, 1).color(0.3, 1, 1, 0.5))
+      .add(synth.shape(4, 0.2, 1).color(0.7, 0.4, 1, 0.5))
       .modulate(
         synth.osc(6, 0, 1.5).brightness(-0.5).modulate(synth.noise(3).sub(synth.gradient()), 1),
         0.5
@@ -40,17 +40,38 @@ function About() {
       </section>
 
       <section className="section">
-        <h2>Meet the WBAR Staff</h2>
+        <h2>Meet the WBAR Staff!</h2>
         <p></p>
         <div className="grid-container">
-          <div className="grid-item">Staff Member 1</div>
-          <div className="grid-item">Staff Member 2</div>
-          <div className="grid-item">Staff Member 3</div>
-          <div className="grid-item">Staff Member 4</div>
-          <div className="grid-item">Staff Member 5</div>
-          <div className="grid-item">Staff Member 6</div>
-          <div className="grid-item">Staff Member 7</div>
-          <div className="grid-item">Staff Member 8</div>
+          <div className="staff-item">
+            <img src={require('./maeve.jpg')} alt="Staff Member 1" className="staff-image" />
+            <p className="staff-name">Maeve</p>
+          </div>
+          <div className="staff-item">
+            <img src={require('./maura.png')} alt="Staff Member 2" className="staff-image" />
+            <p className="staff-name">Maura</p>
+          </div>
+          <div className="staff-item">
+            <img src={require('./fernanda.png')} alt="Staff Member 3" className="staff-image" />
+            <p className="staff-name">Fernanda</p>
+          </div>
+          <div className="staff-item">
+            <img src={require('./tajh.jpg')} alt="Staff Member 4" className="staff-image" />
+            <p className="staff-name">Tajh</p>
+          </div>
+          <div className="staff-item">
+            <img src={require('./zoe.png')} alt="Staff Member 5" className="staff-image" />
+            <p className="staff-name">Zoe</p>
+          </div>
+          <div className="staff-item">
+            <img src={require('./julia.png')} alt="Staff Member 5" className="staff-image" />
+            <p className="staff-name">Julia</p>
+          </div>
+          <div className="staff-item">
+            <img src={require('./isis.jpg')} alt="Staff Member 6" className="staff-image" />
+            <p className="staff-name">Isis</p>
+          </div>
+
         </div>
       </section>
 

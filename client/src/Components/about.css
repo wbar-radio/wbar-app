@@ -37,23 +37,32 @@
 /* Grid for staff section */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 boxes per row */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
   gap: 20px;
   justify-content: center;
 }
 
-.grid-item {
-  background-color: #d3d3d3;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
-  height: 150px;
+/* Styling for staff members */
+.staff-item {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  margin: 10px;
+}
+
+/* Staff image */
+.staff-image {
+  width: 100px;  /* Adjust width */
+  height: 100px; /* Adjust height to fit */
+  object-fit: cover; /* Ensures the image fills the box while maintaining aspect ratio */
+  border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+/* Staff name */
+.staff-name {
+  margin-top: 10px; /* Space between image and name */
+  font-weight: bold; /* Make the name bold */
+  text-align: center; /* Center the name text */
 }
 
 /* Social links styling */
@@ -76,3 +85,18 @@
 .social-links a:hover {
   text-decoration: underline;
 }
+
+/* Media query for tablet screens */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column for mobile */
+  }
+}
+
