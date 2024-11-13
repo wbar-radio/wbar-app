@@ -1,70 +1,84 @@
-
-.spacer {
-    height: 20px; /* Adjust the height as needed */
+.outer-container {
+  background-image: url('./background_tester.JPG'); /* Background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 0; /* Removed padding from outer container */
+  min-height: 100vh; /* Ensure full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start to move the container higher */
+  overflow-x: hidden !important;/* Prevent scrolling on the outer container*/
 }
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.schedule-container {
+  background-color: rgba(30, 30, 30, 0.8); /* Dark background for the content */
+  border-radius: 10px; /* Optional rounded corners */
+  padding: 20px; /* Space inside the content box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  width: 80%; /* Set width to 80% for responsiveness */
+  max-width: 1000px; /* Limit maximum width of the content box */
+  overflow-y: auto; /* Allow scrolling for long content */
+  height: 70vh; /* Set height for the container */
+  margin-top: 30px; /* Adjust margin to position higher */
+  margin-bottom: 0; /* Ensure no bottom margin */
 }
-
-/* DJSched.css */
+/* Optional: Add media query for smaller screens */
+@media (max-width: 768px) {
+  .schedule-container {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.schedule-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+/* Hide scrollbar for Firefox */
+.schedule-container {
+  scrollbar-width: thin; /* Set scrollbar width to thin */
+  scrollbar-color: transparent transparent; /* Hide the scrollbar color */
+}
+/* For IE and Edge */
+.schedule-container {
+  -ms-overflow-style: none; /* Hide scrollbar */
+}
 h1 {
-    color: white
+  color: white;
 }
-
-/* Style for the overall schedule container */
-
 .day {
-    /*padding: 20px;*/
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
 .day:hover {
-    background-color: #e9ecef;
+  background-color: #e9ecef;
 }
-
 .day.active {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
-
-/* Day name */
 .day-name {
-    font-weight: bold;
-    font-size: 25px;
-    margin-bottom: 10px;
-    color: white;
-    text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: white;
 }
-
-/* Show container */
 .show {
-    padding: 10px 0;
-    border-bottom: 1px solid #ccc;
-    width: 50%; /* Adjust this value to control the length of the border */
-    margin: 0 auto; /* Center the element */
-    text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  width: 50%; /* Adjust this value to control the length of the border */
+  margin: 0 auto; /* Center the element */
 }
-
 .current-show {
     margin: 20px 0;
     color: white; /* Adjust as needed */
     text-align: center;
 }
-
-/* Show name */
 .show-name {
-    font-weight: bold;
-    color: white;
+  font-weight: bold;
+  color: white;
 }
-
-/* Time */
 .time {
-    color: #666;
+  color: #666;
 }
