@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 .App {
-  background-color: black;
   font-family: "Newsreader", serif;
 }
-#App {
-  background-color: black;
 
-  /* text-align: center; */
-}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -56,8 +51,8 @@
 }
 /* App.css */
 html, body, .App {
-  background-color: black;
-  width: 100%;
+  background-color: rgba(30, 30, 30, 0.8); /* Dark background for the content */
+  width:100%;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -82,4 +77,8 @@ body, .App {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+.WBARNavbar{
+  background-color: pink !important; /* Background on hover */
+
 }

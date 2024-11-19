@@ -10,7 +10,7 @@ import wbarImage from './wbar-title-v2.png';
 
 const WBARNavbar = () => {
     return (
-        <Navbar sticky={"top"} className={"bg-black"} expand="lg" variant='dark'>
+        <Navbar sticky={"top"}  variant='dark'>
             <Container id={'navbar-container'}>
                 <Navbar.Brand as={Link} to="/">
                     <img
@@ -22,7 +22,7 @@ const WBARNavbar = () => {
                 <Stream/>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className={'ms-auto'}>
+                    <Nav className="custom-navbar">
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
                         <Nav.Link as={Link} to="/events">Events</Nav.Link>
                     </Nav>
