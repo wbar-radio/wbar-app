@@ -73,10 +73,12 @@ function Stream() {
                     <div className={'text-white'}>LIVE</div>
                     <i className={`bi h3 ${isPlaying ? "bi-stop-circle-fill" : "bi-play-circle-fill"} text-white`}
                        onClick={handleTogglePlayState}/>
-                    <Waveform
-                        isPlaying={isPlaying}
-                        analyser={analyser.current}
-                    />
+                   <Waveform
+    isPlaying={isPlaying}
+    analyser={analyser.current}
+    color="#ff5722" // Custom waveform color (e.g., orange)
+/>
+
                 </div>
             </div>
         </div>

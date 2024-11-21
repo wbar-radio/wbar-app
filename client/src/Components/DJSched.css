@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: flex-start; /* Align items to the start to move the container higher */
   overflow-x: hidden !important;/* Prevent scrolling on the outer container*/
+  overflow-y: auto !important;; 
 }
 .schedule-container {
   background-color: rgba(30, 30, 30, 0.8); /* Dark background for the content */

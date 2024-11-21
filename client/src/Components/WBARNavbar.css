@@ -1,4 +1,16 @@
-/* Floating and popping navbar */
+.nav-link {
+  text-decoration: none;
+  color: white !important;
+  font-weight: bold !important;
+  padding: 1em 3em!important;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #452663; /* Change the background color on hover */
+}
+
+
 #navbar-container {
   display: flex;
   justify-content: space-between;
@@ -7,15 +19,5 @@
   padding: 10px 20px; /* Add spacing inside the navbar */
   border-radius: 15px; /* Rounded corners */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Floating shadow effect */
-}
-
-
-/* Adjust the navbar links */
-.nav-link {
-  text-decoration: none;
-  color: white !important;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 8px; /* Rounded link buttons */
 }
 

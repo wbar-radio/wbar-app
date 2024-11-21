@@ -34,14 +34,14 @@ function Waveform({ isPlaying, analyser }) {
         function draw() {
             requestAnimationFrame(draw);
 
-            canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+            canvasCtx.fillStyle = 'rgb(81, 47, 116)'; // Purple background
             canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
             const barWidth = (canvas.width / bufferLength) * 2.5;
 
             if (!isPlaying) {
                 // Draw a horizontal line when paused
-                canvasCtx.strokeStyle = 'rgba(155,40,221,0.71)';
+                canvasCtx.strokeStyle = 'rgba(0,0,0,0.5)'; // Semi-transparent black
                 canvasCtx.lineWidth = barWidth;
                 canvasCtx.beginPath();
                 canvasCtx.moveTo(0, canvas.height / 2);
@@ -59,7 +59,7 @@ function Waveform({ isPlaying, analyser }) {
                 const y = v * canvas.height / 2;
                 const barHeight = Math.abs(y - canvas.height / 2) * 2;
 
-                canvasCtx.fillStyle = 'rgb(155,40,221)';
+                canvasCtx.fillStyle = 'rgb(0,0,0)';
                 canvasCtx.fillRect(x, canvas.height / 2 - barHeight / 2, barWidth, barHeight);
 
                 x += barWidth + 1;

@@ -50,13 +50,25 @@
   overflow-y: auto;
 }
 /* App.css */
+/* Remove the conflicting rule */
 html, body, .App {
-  background-color: rgba(30, 30, 30, 0.8); /* Dark background for the content */
-  width:100%;
+  background-color: black; /* Dark background for the content */
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto; /* Ensure scrolling is enabled */
+}
+
+/* Adjust this as needed for nested containers */
+body, .App {
+  overflow: auto; /* Ensure scrolling is enabled */
+  width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
 }
+
 
 #link-to-form {
   color: var(--bs-white);
@@ -78,7 +90,15 @@ body, .App {
   margin: 0;
   padding: 0;
 }
-.WBARNavbar{
-  background-color: pink !important; /* Background on hover */
+/* Default scrolling behavior */
+html, body {
+  overflow: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
+/* Disable scrolling for the home page */
+body.no-scroll {
+  overflow: hidden; /* Prevent scrolling */
 }
